@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# ATTACK_SIGNAL_GENERATOR, BTN_CONTROLLER, MODULE_CONTROLLER
+# ATTACK_MODULE, BTN_CONTROLLER, MODULE_CONTROLLER
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -270,13 +270,13 @@ proc create_root_design { parentCell } {
   set to_recessive [ create_bd_port -dir IO to_recessive ]
   set triger [ create_bd_port -dir O triger ]
 
-  # Create instance: ATTACK_SIGNAL_GENERA_0, and set properties
-  set block_name ATTACK_SIGNAL_GENERATOR
-  set block_cell_name ATTACK_SIGNAL_GENERA_0
-  if { [catch {set ATTACK_SIGNAL_GENERA_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: ATTACK_MODULE_0, and set properties
+  set block_name ATTACK_MODULE
+  set block_cell_name ATTACK_MODULE_0
+  if { [catch {set ATTACK_MODULE_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $ATTACK_SIGNAL_GENERA_0 eq "" } {
+   } elseif { $ATTACK_MODULE_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -375,23 +375,23 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net microblaze_0_ilmb_1 [get_bd_intf_pins microblaze_0/ILMB] [get_bd_intf_pins microblaze_0_local_memory/ILMB]
 
   # Create port connections
-  connect_bd_net -net ATTACK_SIGNAL_GENERA_0_DEBUG [get_bd_ports debug] [get_bd_pins ATTACK_SIGNAL_GENERA_0/DEBUG]
+  connect_bd_net -net ATTACK_MODULE_0_DEBUG [get_bd_ports debug] [get_bd_pins ATTACK_MODULE_0/DEBUG]
   connect_bd_net -net BTN_0_1 [get_bd_ports BTN_0] [get_bd_pins BTN_CONTROLLER_0/BTN_0]
   connect_bd_net -net BTN_1_1 [get_bd_ports BTN_1] [get_bd_pins BTN_CONTROLLER_0/BTN_1]
   connect_bd_net -net BTN_2_1 [get_bd_ports BTN_2] [get_bd_pins BTN_CONTROLLER_0/BTN_2]
-  connect_bd_net -net BTN_CONTROLLER_0_BTN_0_COUNTER [get_bd_pins ATTACK_SIGNAL_GENERA_0/INC_LENGTH] [get_bd_pins BTN_CONTROLLER_0/BTN_0_COUNTER]
-  connect_bd_net -net BTN_CONTROLLER_0_BTN_1_COUNTER [get_bd_pins ATTACK_SIGNAL_GENERA_0/INC_LOC] [get_bd_pins BTN_CONTROLLER_0/BTN_1_COUNTER]
-  connect_bd_net -net MODULE_CONTROLLER_0_ATTACK_STATE [get_bd_pins ATTACK_SIGNAL_GENERA_0/ATTACK_STATE] [get_bd_pins MODULE_CONTROLLER_0/ATTACK_STATE]
+  connect_bd_net -net BTN_CONTROLLER_0_BTN_0_COUNTER [get_bd_pins ATTACK_MODULE_0/INC_LENGTH] [get_bd_pins BTN_CONTROLLER_0/BTN_0_COUNTER]
+  connect_bd_net -net BTN_CONTROLLER_0_BTN_1_COUNTER [get_bd_pins ATTACK_MODULE_0/INC_LOC] [get_bd_pins BTN_CONTROLLER_0/BTN_1_COUNTER]
+  connect_bd_net -net MODULE_CONTROLLER_0_ATTACK_STATE [get_bd_pins ATTACK_MODULE_0/ATTACK_STATE] [get_bd_pins MODULE_CONTROLLER_0/ATTACK_STATE]
   connect_bd_net -net MODULE_CONTROLLER_0_DEBUG_1 [get_bd_ports debug_1] [get_bd_pins MODULE_CONTROLLER_0/DEBUG_1]
   connect_bd_net -net MODULE_CONTROLLER_0_DEBUG_2 [get_bd_ports debug_2] [get_bd_pins MODULE_CONTROLLER_0/DEBUG_2]
   connect_bd_net -net MODULE_CONTROLLER_0_OPERATING_STATE [get_bd_pins MODULE_CONTROLLER_0/OPERATING_STATE] [get_bd_pins axi_gpio_1/gpio2_io_i]
   connect_bd_net -net MODULE_CONTROLLER_0_SUCCESS_RATE [get_bd_pins MODULE_CONTROLLER_0/SUCCESS_RATE] [get_bd_pins axi_gpio_1/gpio_io_i]
   connect_bd_net -net MODULE_CONTROLLER_0_TRIGER [get_bd_ports triger] [get_bd_pins MODULE_CONTROLLER_0/TRIGER]
-  connect_bd_net -net Net [get_bd_ports to_dominant] [get_bd_pins ATTACK_SIGNAL_GENERA_0/TO_DOMINANT]
-  connect_bd_net -net Net1 [get_bd_ports to_recessive] [get_bd_pins ATTACK_SIGNAL_GENERA_0/TO_RECESSIVE]
+  connect_bd_net -net Net [get_bd_ports to_dominant] [get_bd_pins ATTACK_MODULE_0/TO_DOMINANT]
+  connect_bd_net -net Net1 [get_bd_ports to_recessive] [get_bd_pins ATTACK_MODULE_0/TO_RECESSIVE]
   connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/CAN_SIGNAL_IN]
-  connect_bd_net -net clk_wiz_1_clk_out2 [get_bd_pins ATTACK_SIGNAL_GENERA_0/CLK] [get_bd_pins BTN_CONTROLLER_0/CLK] [get_bd_pins MODULE_CONTROLLER_0/CLK] [get_bd_pins clk_wiz_1/clk_out2]
-  connect_bd_net -net clk_wiz_1_locked [get_bd_pins ATTACK_SIGNAL_GENERA_0/RESET] [get_bd_pins BTN_CONTROLLER_0/RESET] [get_bd_pins MODULE_CONTROLLER_0/RESET] [get_bd_pins clk_wiz_1/locked] [get_bd_pins rst_clk_wiz_1_100M/dcm_locked]
+  connect_bd_net -net clk_wiz_1_clk_out2 [get_bd_pins ATTACK_MODULE_0/CLK] [get_bd_pins BTN_CONTROLLER_0/CLK] [get_bd_pins MODULE_CONTROLLER_0/CLK] [get_bd_pins clk_wiz_1/clk_out2]
+  connect_bd_net -net clk_wiz_1_locked [get_bd_pins ATTACK_MODULE_0/RESET] [get_bd_pins BTN_CONTROLLER_0/RESET] [get_bd_pins MODULE_CONTROLLER_0/RESET] [get_bd_pins clk_wiz_1/locked] [get_bd_pins rst_clk_wiz_1_100M/dcm_locked]
   connect_bd_net -net mdm_1_debug_sys_rst [get_bd_pins mdm_1/Debug_SYS_Rst] [get_bd_pins rst_clk_wiz_1_100M/mb_debug_sys_rst]
   connect_bd_net -net microblaze_0_Clk [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins rst_clk_wiz_1_100M/slowest_sync_clk]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins clk_wiz_1/resetn] [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]

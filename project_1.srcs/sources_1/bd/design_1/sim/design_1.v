@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Mon May 27 23:38:47 2019
+//Date        : Mon Jun  3 15:13:40 2019
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -42,7 +42,7 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *) output usb_uart_txd;
 
-  wire ATTACK_SIGNAL_GENERA_0_DEBUG;
+  wire ATTACK_MODULE_0_DEBUG;
   wire BTN_0_1;
   wire BTN_1_1;
   wire BTN_2_1;
@@ -156,7 +156,7 @@ module design_1
   assign BTN_2_1 = BTN_2;
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
   assign can_signal_in_1 = can_signal_in;
-  assign debug = ATTACK_SIGNAL_GENERA_0_DEBUG;
+  assign debug = ATTACK_MODULE_0_DEBUG;
   assign debug_1 = MODULE_CONTROLLER_0_DEBUG_1;
   assign debug_2 = MODULE_CONTROLLER_0_DEBUG_2;
   assign reset_1 = reset;
@@ -164,10 +164,10 @@ module design_1
   assign sys_clock_1 = sys_clock;
   assign triger = MODULE_CONTROLLER_0_TRIGER;
   assign usb_uart_txd = axi_uartlite_0_UART_TxD;
-  design_1_ATTACK_SIGNAL_GENERA_0_0 ATTACK_SIGNAL_GENERA_0
+  design_1_ATTACK_MODULE_0_0 ATTACK_MODULE_0
        (.ATTACK_STATE(MODULE_CONTROLLER_0_ATTACK_STATE),
         .CLK(clk_wiz_1_clk_out2),
-        .DEBUG(ATTACK_SIGNAL_GENERA_0_DEBUG),
+        .DEBUG(ATTACK_MODULE_0_DEBUG),
         .INC_LENGTH(BTN_CONTROLLER_0_BTN_0_COUNTER),
         .INC_LOC(BTN_CONTROLLER_0_BTN_1_COUNTER),
         .RESET(clk_wiz_1_locked),

@@ -47,15 +47,15 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:ATTACK_SIGNAL_GENERATOR:1.0
+// IP VLNV: xilinx.com:module_ref:ATTACK_MODULE:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "ATTACK_SIGNAL_GENERATOR,Vivado 2018.3" *)
-(* CHECK_LICENSE_TYPE = "design_1_ATTACK_SIGNAL_GENERA_0_0,ATTACK_SIGNAL_GENERATOR,{}" *)
-(* CORE_GENERATION_INFO = "design_1_ATTACK_SIGNAL_GENERA_0_0,ATTACK_SIGNAL_GENERATOR,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ATTACK_SIGNAL_GENERATOR,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* X_CORE_INFO = "ATTACK_MODULE,Vivado 2018.3" *)
+(* CHECK_LICENSE_TYPE = "design_1_ATTACK_MODULE_0_0,ATTACK_MODULE,{}" *)
+(* CORE_GENERATION_INFO = "design_1_ATTACK_MODULE_0_0,ATTACK_MODULE,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ATTACK_MODULE,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_ATTACK_SIGNAL_GENERA_0_0 (
+module design_1_ATTACK_MODULE_0_0 (
   CLK,
   RESET,
   ATTACK_STATE,
@@ -79,7 +79,7 @@ inout wire TO_DOMINANT;
 inout wire TO_RECESSIVE;
 output wire DEBUG;
 
-  ATTACK_SIGNAL_GENERATOR inst (
+  ATTACK_MODULE inst (
     .CLK(CLK),
     .RESET(RESET),
     .ATTACK_STATE(ATTACK_STATE),

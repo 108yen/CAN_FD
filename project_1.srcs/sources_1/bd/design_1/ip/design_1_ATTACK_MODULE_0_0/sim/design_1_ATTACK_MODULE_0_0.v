@@ -47,14 +47,14 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:ATTACK_SIGNAL_GENERATOR:1.0
+// IP VLNV: xilinx.com:module_ref:ATTACK_MODULE:1.0
 // IP Revision: 1
 
 `timescale 1ns/1ps
 
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module design_1_ATTACK_SIGNAL_GENERA_0_0 (
+module design_1_ATTACK_MODULE_0_0 (
   CLK,
   RESET,
   ATTACK_STATE,
@@ -78,7 +78,7 @@ inout wire TO_DOMINANT;
 inout wire TO_RECESSIVE;
 output wire DEBUG;
 
-  ATTACK_SIGNAL_GENERATOR inst (
+  ATTACK_MODULE inst (
     .CLK(CLK),
     .RESET(RESET),
     .ATTACK_STATE(ATTACK_STATE),
