@@ -26,8 +26,8 @@ module BTN_CONTROLLER(CLK, RESET, BTN_0, BTN_1, BTN_2, BTN_0_COUNTER, BTN_1_COUN
     input BTN_0;
     input BTN_1;
     input BTN_2;
-    output reg [7:0]BTN_0_COUNTER;
-    output reg [7:0]BTN_1_COUNTER;
+    output reg [7:0]BTN_0_COUNTER = 0;
+    output reg [7:0]BTN_1_COUNTER = 0;
     
     reg [1:0]BTN_0_reg;
     reg [1:0]BTN_1_reg;

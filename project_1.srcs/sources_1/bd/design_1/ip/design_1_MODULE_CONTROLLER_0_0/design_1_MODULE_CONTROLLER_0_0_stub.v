@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon May 27 23:39:21 2019
+// Date        : Mon Jun 10 16:15:38 2019
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_MODULE_CONTROLLER_0_0/design_1_MODULE_CONTROLLER_0_0_stub.v
@@ -15,16 +15,14 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "MODULE_CONTROLLER,Vivado 2018.3" *)
 module design_1_MODULE_CONTROLLER_0_0(CLK, RESET, ATTACK_PERMIT, CAN_SIGNAL_IN, TRIGER, 
-  ATTACK_STATE, OPERATING_STATE, SUCCESS_RATE, DEBUG, DEBUG_1, DEBUG_2)
-/* synthesis syn_black_box black_box_pad_pin="CLK,RESET,ATTACK_PERMIT,CAN_SIGNAL_IN,TRIGER,ATTACK_STATE,OPERATING_STATE[7:0],SUCCESS_RATE[31:0],DEBUG,DEBUG_1,DEBUG_2" */;
+  ATTACK_STATE, DEBUG, DEBUG_1, DEBUG_2)
+/* synthesis syn_black_box black_box_pad_pin="CLK,RESET,ATTACK_PERMIT,CAN_SIGNAL_IN,TRIGER,ATTACK_STATE,DEBUG,DEBUG_1,DEBUG_2" */;
   input CLK;
   input RESET;
   input ATTACK_PERMIT;
   input CAN_SIGNAL_IN;
   output TRIGER;
   output ATTACK_STATE;
-  output [7:0]OPERATING_STATE;
-  output [31:0]SUCCESS_RATE;
   output DEBUG;
   output DEBUG_1;
   output DEBUG_2;

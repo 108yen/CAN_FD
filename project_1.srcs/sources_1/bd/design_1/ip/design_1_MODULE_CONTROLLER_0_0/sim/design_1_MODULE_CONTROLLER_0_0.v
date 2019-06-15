@@ -61,8 +61,6 @@ module design_1_MODULE_CONTROLLER_0_0 (
   CAN_SIGNAL_IN,
   TRIGER,
   ATTACK_STATE,
-  OPERATING_STATE,
-  SUCCESS_RATE,
   DEBUG,
   DEBUG_1,
   DEBUG_2
@@ -78,8 +76,6 @@ input wire ATTACK_PERMIT;
 input wire CAN_SIGNAL_IN;
 output wire TRIGER;
 output wire ATTACK_STATE;
-output wire [7 : 0] OPERATING_STATE;
-output wire [31 : 0] SUCCESS_RATE;
 output wire DEBUG;
 output wire DEBUG_1;
 output wire DEBUG_2;
@@ -91,8 +87,6 @@ output wire DEBUG_2;
     .CAN_SIGNAL_IN(CAN_SIGNAL_IN),
     .TRIGER(TRIGER),
     .ATTACK_STATE(ATTACK_STATE),
-    .OPERATING_STATE(OPERATING_STATE),
-    .SUCCESS_RATE(SUCCESS_RATE),
     .DEBUG(DEBUG),
     .DEBUG_1(DEBUG_1),
     .DEBUG_2(DEBUG_2)

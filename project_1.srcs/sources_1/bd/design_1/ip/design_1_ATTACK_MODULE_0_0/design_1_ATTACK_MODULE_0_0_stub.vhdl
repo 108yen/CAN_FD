@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Jun  3 15:14:12 2019
+-- Date        : Sat Jun 15 17:27:24 2019
 -- Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_stub.vhdl
+--               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_stub.vhdl
 -- Design      : design_1_ATTACK_MODULE_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35ticsg324-1L
@@ -21,6 +21,7 @@ entity design_1_ATTACK_MODULE_0_0 is
     INC_LOC : in STD_LOGIC_VECTOR ( 7 downto 0 );
     TO_DOMINANT : inout STD_LOGIC;
     TO_RECESSIVE : inout STD_LOGIC;
+    INC : out STD_LOGIC_VECTOR ( 31 downto 0 );
     DEBUG : out STD_LOGIC
   );
 
@@ -30,7 +31,7 @@ architecture stub of design_1_ATTACK_MODULE_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "CLK,RESET,ATTACK_STATE,INC_LENGTH[7:0],INC_LOC[7:0],TO_DOMINANT,TO_RECESSIVE,DEBUG";
+attribute black_box_pad_pin of stub : architecture is "CLK,RESET,ATTACK_STATE,INC_LENGTH[7:0],INC_LOC[7:0],TO_DOMINANT,TO_RECESSIVE,INC[31:0],DEBUG";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "ATTACK_MODULE,Vivado 2018.3";
 begin

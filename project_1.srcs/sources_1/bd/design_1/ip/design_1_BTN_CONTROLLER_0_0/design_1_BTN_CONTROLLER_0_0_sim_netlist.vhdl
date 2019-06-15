@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon May 27 23:39:21 2019
+-- Date        : Fri Jun 14 18:43:15 2019
 -- Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_BTN_CONTROLLER_0_0/design_1_BTN_CONTROLLER_0_0_sim_netlist.vhdl
+--               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_BTN_CONTROLLER_0_0/design_1_BTN_CONTROLLER_0_0_sim_netlist.vhdl
 -- Design      : design_1_BTN_CONTROLLER_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -182,7 +182,10 @@ begin
       O => \BTN_0_COUNTER[7]_i_4_n_0\
     );
 \BTN_0_COUNTER_reg[0]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(0),
@@ -190,7 +193,10 @@ begin
       R => \BTN_0_COUNTER[7]_i_1_n_0\
     );
 \BTN_0_COUNTER_reg[1]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(1),
@@ -198,7 +204,10 @@ begin
       R => \BTN_0_COUNTER[7]_i_1_n_0\
     );
 \BTN_0_COUNTER_reg[2]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(2),
@@ -206,7 +215,10 @@ begin
       R => \BTN_0_COUNTER[7]_i_1_n_0\
     );
 \BTN_0_COUNTER_reg[3]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(3),
@@ -214,7 +226,10 @@ begin
       R => \BTN_0_COUNTER[7]_i_1_n_0\
     );
 \BTN_0_COUNTER_reg[4]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(4),
@@ -222,7 +237,10 @@ begin
       R => \BTN_0_COUNTER[7]_i_1_n_0\
     );
 \BTN_0_COUNTER_reg[5]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(5),
@@ -230,7 +248,10 @@ begin
       R => \BTN_0_COUNTER[7]_i_1_n_0\
     );
 \BTN_0_COUNTER_reg[6]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(6),
@@ -238,7 +259,10 @@ begin
       R => \BTN_0_COUNTER[7]_i_1_n_0\
     );
 \BTN_0_COUNTER_reg[7]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_0_COUNTER[7]_i_2_n_0\,
       D => p_0_in(7),
@@ -390,7 +414,10 @@ begin
       O => \BTN_1_COUNTER[7]_i_4_n_0\
     );
 \BTN_1_COUNTER_reg[0]\: unisim.vcomponents.FDSE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => '1',
       D => \BTN_1_COUNTER[0]_i_2_n_0\,
@@ -398,7 +425,10 @@ begin
       S => \BTN_1_COUNTER[0]_i_1_n_0\
     );
 \BTN_1_COUNTER_reg[1]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_1_COUNTER[7]_i_2_n_0\,
       D => p_2_in(1),
@@ -406,7 +436,10 @@ begin
       R => \BTN_1_COUNTER[7]_i_1_n_0\
     );
 \BTN_1_COUNTER_reg[2]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_1_COUNTER[7]_i_2_n_0\,
       D => p_2_in(2),
@@ -414,7 +447,10 @@ begin
       R => \BTN_1_COUNTER[7]_i_1_n_0\
     );
 \BTN_1_COUNTER_reg[3]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_1_COUNTER[7]_i_2_n_0\,
       D => p_2_in(3),
@@ -422,7 +458,10 @@ begin
       R => \BTN_1_COUNTER[7]_i_1_n_0\
     );
 \BTN_1_COUNTER_reg[4]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_1_COUNTER[7]_i_2_n_0\,
       D => p_2_in(4),
@@ -430,7 +469,10 @@ begin
       R => \BTN_1_COUNTER[7]_i_1_n_0\
     );
 \BTN_1_COUNTER_reg[5]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_1_COUNTER[7]_i_2_n_0\,
       D => p_2_in(5),
@@ -438,7 +480,10 @@ begin
       R => \BTN_1_COUNTER[7]_i_1_n_0\
     );
 \BTN_1_COUNTER_reg[6]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_1_COUNTER[7]_i_2_n_0\,
       D => p_2_in(6),
@@ -446,7 +491,10 @@ begin
       R => \BTN_1_COUNTER[7]_i_1_n_0\
     );
 \BTN_1_COUNTER_reg[7]\: unisim.vcomponents.FDRE
-     port map (
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => CLK,
       CE => \BTN_1_COUNTER[7]_i_2_n_0\,
       D => p_2_in(7),

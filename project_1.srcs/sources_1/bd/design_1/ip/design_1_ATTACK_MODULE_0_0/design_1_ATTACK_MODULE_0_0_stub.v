@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Jun  3 15:14:12 2019
+// Date        : Sat Jun 15 17:27:24 2019
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_stub.v
+//               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_stub.v
 // Design      : design_1_ATTACK_MODULE_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35ticsg324-1L
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "ATTACK_MODULE,Vivado 2018.3" *)
 module design_1_ATTACK_MODULE_0_0(CLK, RESET, ATTACK_STATE, INC_LENGTH, INC_LOC, 
-  TO_DOMINANT, TO_RECESSIVE, DEBUG)
-/* synthesis syn_black_box black_box_pad_pin="CLK,RESET,ATTACK_STATE,INC_LENGTH[7:0],INC_LOC[7:0],TO_DOMINANT,TO_RECESSIVE,DEBUG" */;
+  TO_DOMINANT, TO_RECESSIVE, INC, DEBUG)
+/* synthesis syn_black_box black_box_pad_pin="CLK,RESET,ATTACK_STATE,INC_LENGTH[7:0],INC_LOC[7:0],TO_DOMINANT,TO_RECESSIVE,INC[31:0],DEBUG" */;
   input CLK;
   input RESET;
   input ATTACK_STATE;
@@ -24,5 +24,6 @@ module design_1_ATTACK_MODULE_0_0(CLK, RESET, ATTACK_STATE, INC_LENGTH, INC_LOC,
   input [7:0]INC_LOC;
   inout TO_DOMINANT;
   inout TO_RECESSIVE;
+  output [31:0]INC;
   output DEBUG;
 endmodule

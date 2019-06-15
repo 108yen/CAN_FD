@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Jun  3 15:14:12 2019
+// Date        : Sat Jun 15 17:27:24 2019
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_sim_netlist.v
+//               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_sim_netlist.v
 // Design      : design_1_ATTACK_MODULE_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -23,6 +23,7 @@ module design_1_ATTACK_MODULE_0_0
     INC_LOC,
     TO_DOMINANT,
     TO_RECESSIVE,
+    INC,
     DEBUG);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK, ASSOCIATED_RESET RESET, FREQ_HZ 40000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input CLK;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RESET, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input RESET;
@@ -31,70 +32,64 @@ module design_1_ATTACK_MODULE_0_0
   input [7:0]INC_LOC;
   inout TO_DOMINANT;
   inout TO_RECESSIVE;
+  output [31:0]INC;
   output DEBUG;
 
+  wire \<const0> ;
   wire ATTACK_STATE;
   wire CLK;
-  wire DEBUG;
   wire [7:0]INC_LENGTH;
   wire [7:0]INC_LOC;
   wire RESET;
   wire TO_DOMINANT;
   wire TO_RECESSIVE;
-  wire condAttack;
 
-  LUT1 #(
-    .INIT(2'h1)) 
-    TO_DOMINANT_INST_0
-       (.I0(condAttack),
-        .O(TO_DOMINANT));
-  LUT1 #(
-    .INIT(2'h1)) 
-    TO_RECESSIVE_INST_0
-       (.I0(DEBUG),
-        .O(TO_RECESSIVE));
+  assign INC[31] = \<const0> ;
+  assign INC[30] = \<const0> ;
+  assign INC[29] = \<const0> ;
+  assign INC[28] = \<const0> ;
+  assign INC[27] = \<const0> ;
+  assign INC[26] = \<const0> ;
+  assign INC[25] = \<const0> ;
+  assign INC[24] = \<const0> ;
+  assign INC[23] = \<const0> ;
+  assign INC[22] = \<const0> ;
+  assign INC[21] = \<const0> ;
+  assign INC[20] = \<const0> ;
+  assign INC[19] = \<const0> ;
+  assign INC[18] = \<const0> ;
+  assign INC[17] = \<const0> ;
+  assign INC[16] = \<const0> ;
+  assign INC[15:8] = INC_LENGTH;
+  assign INC[7:0] = INC_LOC;
+  GND GND
+       (.G(\<const0> ));
   design_1_ATTACK_MODULE_0_0_ATTACK_MODULE inst
        (.ATTACK_STATE(ATTACK_STATE),
         .CLK(CLK),
-        .DEBUG(DEBUG),
-        .INC_LENGTH(INC_LENGTH),
-        .INC_LOC(INC_LOC),
         .RESET(RESET),
         .TO_DOMINANT(TO_DOMINANT),
-        .TO_RECESSIVE(TO_RECESSIVE),
-        .condAttack(condAttack));
+        .TO_RECESSIVE(TO_RECESSIVE));
 endmodule
 
 (* ORIG_REF_NAME = "ATTACK_MODULE" *) 
 module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
-   (DEBUG,
-    condAttack,
-    CLK,
-    INC_LENGTH,
-    INC_LOC,
+   (TO_DOMINANT,
+    TO_RECESSIVE,
     RESET,
     ATTACK_STATE,
-    TO_RECESSIVE,
-    TO_DOMINANT);
-  output DEBUG;
-  output condAttack;
-  input CLK;
-  input [7:0]INC_LENGTH;
-  input [7:0]INC_LOC;
+    CLK);
+  inout TO_DOMINANT;
+  inout TO_RECESSIVE;
   input RESET;
   input ATTACK_STATE;
-  input TO_RECESSIVE;
-  input TO_DOMINANT;
+  input CLK;
 
   wire ATTACK_STATE;
   wire CLK;
-  wire DEBUG;
-  wire [7:0]INC_LENGTH;
-  wire [7:0]INC_LOC;
   wire RESET;
   wire TO_DOMINANT;
   wire TO_RECESSIVE;
-  wire condAttack;
   wire \counter[0]_i_1_n_0 ;
   wire \counter[0]_i_3_n_0 ;
   wire [15:0]counter_reg;
@@ -129,6 +124,45 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
   wire \counter_reg[8]_i_1_n_5 ;
   wire \counter_reg[8]_i_1_n_6 ;
   wire \counter_reg[8]_i_1_n_7 ;
+  wire dominant;
+  wire dominant_i_10_n_0;
+  wire dominant_i_11_n_0;
+  wire dominant_i_12_n_0;
+  wire dominant_i_13_n_0;
+  wire dominant_i_14_n_0;
+  wire dominant_i_15_n_0;
+  wire dominant_i_16_n_0;
+  wire dominant_i_17_n_0;
+  wire dominant_i_18_n_0;
+  wire dominant_i_19_n_0;
+  wire dominant_i_1_n_0;
+  wire dominant_i_2_n_0;
+  wire dominant_i_6_n_0;
+  wire dominant_i_7_n_0;
+  wire dominant_i_8_n_0;
+  wire dominant_i_9_n_0;
+  wire dominant_reg_i_4_n_0;
+  wire dominant_reg_i_5_n_0;
+  wire recessive;
+  wire recessive_i_10_n_0;
+  wire recessive_i_11_n_0;
+  wire recessive_i_12_n_0;
+  wire recessive_i_13_n_0;
+  wire recessive_i_14_n_0;
+  wire recessive_i_16_n_0;
+  wire recessive_i_17_n_0;
+  wire recessive_i_18_n_0;
+  wire recessive_i_19_n_0;
+  wire recessive_i_1_n_0;
+  wire recessive_i_20_n_0;
+  wire recessive_i_2_n_0;
+  wire recessive_i_4_n_0;
+  wire recessive_i_6_n_0;
+  wire recessive_i_7_n_0;
+  wire recessive_i_8_n_0;
+  wire recessive_i_9_n_0;
+  wire recessive_reg_i_15_n_0;
+  wire recessive_reg_i_5_n_0;
   wire [3:3]\NLW_counter_reg[12]_i_1_CO_UNCONNECTED ;
 
   LUT2 #(
@@ -266,577 +300,364 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
         .D(\counter_reg[8]_i_1_n_6 ),
         .Q(counter_reg[9]),
         .R(\counter[0]_i_1_n_0 ));
-  design_1_ATTACK_MODULE_0_0_ATTACK_SIGNAL_GENERATOR forgery
-       (.CLK(CLK),
-        .INC_LENGTH(INC_LENGTH),
-        .INC_LOC(INC_LOC),
-        .RESET(RESET),
-        .TO_DOMINANT(TO_DOMINANT),
-        .condAttack(condAttack),
-        .counter_reg(counter_reg));
-  design_1_ATTACK_MODULE_0_0_ATTACK_SIGNAL_GENERATOR_0 resyn
-       (.CLK(CLK),
-        .DEBUG(DEBUG),
-        .RESET(RESET),
-        .TO_RECESSIVE(TO_RECESSIVE),
-        .counter_reg(counter_reg));
-endmodule
-
-(* ORIG_REF_NAME = "ATTACK_SIGNAL_GENERATOR" *) 
-module design_1_ATTACK_MODULE_0_0_ATTACK_SIGNAL_GENERATOR
-   (condAttack,
-    CLK,
-    counter_reg,
-    INC_LENGTH,
-    INC_LOC,
-    TO_DOMINANT,
-    RESET);
-  output condAttack;
-  input CLK;
-  input [15:0]counter_reg;
-  input [7:0]INC_LENGTH;
-  input [7:0]INC_LOC;
-  input TO_DOMINANT;
-  input RESET;
-
-  wire CLK;
-  wire [7:0]INC_LENGTH;
-  wire [7:0]INC_LOC;
-  wire RESET;
-  wire TO_DOMINANT;
-  wire attack;
-  wire \attackCounter[5]_i_1__0_n_0 ;
-  wire \attackCounter[7]_i_1__0_n_0 ;
-  wire \attackCounter[7]_i_3__0_n_0 ;
-  wire [7:0]attackCounter_reg__0;
-  wire attack_carry__0_i_1_n_0;
-  wire attack_carry__0_i_2_n_0;
-  wire attack_carry__0_n_3;
-  wire attack_carry_i_1_n_0;
-  wire attack_carry_i_2_n_0;
-  wire attack_carry_i_3_n_0;
-  wire attack_carry_i_4_n_0;
-  wire attack_carry_n_0;
-  wire attack_carry_n_1;
-  wire attack_carry_n_2;
-  wire attack_carry_n_3;
-  wire condAttack;
-  wire condAttack_i_1__0_n_0;
-  wire condAttack_i_2__0_n_0;
-  wire condAttack_i_3__0_n_0;
-  wire condAttack_i_4__0_n_0;
-  wire condAttack_i_5__0_n_0;
-  wire condAttack_i_6__0_n_0;
-  wire condAttack_i_7__0_n_0;
-  wire condAttack_i_8_n_0;
-  wire [15:0]counter_reg;
-  wire [7:0]p_0_in;
-  wire [3:0]NLW_attack_carry_O_UNCONNECTED;
-  wire [3:2]NLW_attack_carry__0_CO_UNCONNECTED;
-  wire [3:0]NLW_attack_carry__0_O_UNCONNECTED;
-
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT1 #(
-    .INIT(2'h1)) 
-    \attackCounter[0]_i_1 
-       (.I0(attackCounter_reg__0[0]),
-        .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    \attackCounter[1]_i_1__0 
-       (.I0(attackCounter_reg__0[0]),
-        .I1(attackCounter_reg__0[1]),
-        .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'h6A)) 
-    \attackCounter[2]_i_1__0 
-       (.I0(attackCounter_reg__0[2]),
-        .I1(attackCounter_reg__0[0]),
-        .I2(attackCounter_reg__0[1]),
-        .O(p_0_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
-    .INIT(16'h6AAA)) 
-    \attackCounter[3]_i_1__0 
-       (.I0(attackCounter_reg__0[3]),
-        .I1(attackCounter_reg__0[1]),
-        .I2(attackCounter_reg__0[0]),
-        .I3(attackCounter_reg__0[2]),
-        .O(p_0_in[3]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h6AAAAAAA)) 
-    \attackCounter[4]_i_1__0 
-       (.I0(attackCounter_reg__0[4]),
-        .I1(attackCounter_reg__0[2]),
-        .I2(attackCounter_reg__0[0]),
-        .I3(attackCounter_reg__0[1]),
-        .I4(attackCounter_reg__0[3]),
-        .O(p_0_in[4]));
-  LUT6 #(
-    .INIT(64'h6AAAAAAAAAAAAAAA)) 
-    \attackCounter[5]_i_1__0 
-       (.I0(attackCounter_reg__0[5]),
-        .I1(attackCounter_reg__0[4]),
-        .I2(attackCounter_reg__0[2]),
-        .I3(attackCounter_reg__0[0]),
-        .I4(attackCounter_reg__0[1]),
-        .I5(attackCounter_reg__0[3]),
-        .O(\attackCounter[5]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'h9A)) 
-    \attackCounter[6]_i_1__0 
-       (.I0(attackCounter_reg__0[6]),
-        .I1(\attackCounter[7]_i_3__0_n_0 ),
-        .I2(attackCounter_reg__0[5]),
-        .O(p_0_in[6]));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \attackCounter[7]_i_1__0 
-       (.I0(TO_DOMINANT),
-        .I1(RESET),
-        .O(\attackCounter[7]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT4 #(
-    .INIT(16'hA6AA)) 
-    \attackCounter[7]_i_2__0 
-       (.I0(attackCounter_reg__0[7]),
-        .I1(attackCounter_reg__0[5]),
-        .I2(\attackCounter[7]_i_3__0_n_0 ),
-        .I3(attackCounter_reg__0[6]),
-        .O(p_0_in[7]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h7FFFFFFF)) 
-    \attackCounter[7]_i_3__0 
-       (.I0(attackCounter_reg__0[3]),
-        .I1(attackCounter_reg__0[1]),
-        .I2(attackCounter_reg__0[0]),
-        .I3(attackCounter_reg__0[2]),
-        .I4(attackCounter_reg__0[4]),
-        .O(\attackCounter[7]_i_3__0_n_0 ));
-  FDRE \attackCounter_reg[0] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in[0]),
-        .Q(attackCounter_reg__0[0]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  FDRE \attackCounter_reg[1] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in[1]),
-        .Q(attackCounter_reg__0[1]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  FDRE \attackCounter_reg[2] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in[2]),
-        .Q(attackCounter_reg__0[2]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  FDRE \attackCounter_reg[3] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in[3]),
-        .Q(attackCounter_reg__0[3]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  FDRE \attackCounter_reg[4] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in[4]),
-        .Q(attackCounter_reg__0[4]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  FDRE \attackCounter_reg[5] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(\attackCounter[5]_i_1__0_n_0 ),
-        .Q(attackCounter_reg__0[5]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  FDRE \attackCounter_reg[6] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in[6]),
-        .Q(attackCounter_reg__0[6]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  FDRE \attackCounter_reg[7] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in[7]),
-        .Q(attackCounter_reg__0[7]),
-        .R(\attackCounter[7]_i_1__0_n_0 ));
-  CARRY4 attack_carry
-       (.CI(1'b0),
-        .CO({attack_carry_n_0,attack_carry_n_1,attack_carry_n_2,attack_carry_n_3}),
-        .CYINIT(1'b1),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(NLW_attack_carry_O_UNCONNECTED[3:0]),
-        .S({attack_carry_i_1_n_0,attack_carry_i_2_n_0,attack_carry_i_3_n_0,attack_carry_i_4_n_0}));
-  CARRY4 attack_carry__0
-       (.CI(attack_carry_n_0),
-        .CO({NLW_attack_carry__0_CO_UNCONNECTED[3:2],attack,attack_carry__0_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(NLW_attack_carry__0_O_UNCONNECTED[3:0]),
-        .S({1'b0,1'b0,attack_carry__0_i_1_n_0,attack_carry__0_i_2_n_0}));
-  LUT1 #(
-    .INIT(2'h1)) 
-    attack_carry__0_i_1
-       (.I0(counter_reg[15]),
-        .O(attack_carry__0_i_1_n_0));
-  LUT3 #(
-    .INIT(8'h01)) 
-    attack_carry__0_i_2
-       (.I0(counter_reg[12]),
-        .I1(counter_reg[13]),
-        .I2(counter_reg[14]),
-        .O(attack_carry__0_i_2_n_0));
-  LUT3 #(
-    .INIT(8'h04)) 
-    attack_carry_i_1
-       (.I0(counter_reg[10]),
-        .I1(counter_reg[9]),
-        .I2(counter_reg[11]),
-        .O(attack_carry_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h0018180082000018)) 
-    attack_carry_i_2
-       (.I0(counter_reg[8]),
-        .I1(INC_LOC[7]),
-        .I2(counter_reg[7]),
-        .I3(INC_LOC[5]),
-        .I4(INC_LOC[6]),
-        .I5(counter_reg[6]),
-        .O(attack_carry_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h0990000000000990)) 
-    attack_carry_i_3
-       (.I0(counter_reg[3]),
-        .I1(INC_LOC[3]),
-        .I2(counter_reg[5]),
-        .I3(INC_LOC[5]),
-        .I4(INC_LOC[4]),
-        .I5(counter_reg[4]),
-        .O(attack_carry_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    attack_carry_i_4
-       (.I0(counter_reg[0]),
-        .I1(INC_LOC[0]),
-        .I2(counter_reg[1]),
-        .I3(INC_LOC[1]),
-        .I4(INC_LOC[2]),
-        .I5(counter_reg[2]),
-        .O(attack_carry_i_4_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFAA8A00000000)) 
-    condAttack_i_1__0
-       (.I0(condAttack),
-        .I1(condAttack_i_2__0_n_0),
-        .I2(condAttack_i_3__0_n_0),
-        .I3(condAttack_i_4__0_n_0),
-        .I4(attack),
-        .I5(RESET),
-        .O(condAttack_i_1__0_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFF96F6FF6)) 
-    condAttack_i_2__0
-       (.I0(INC_LENGTH[4]),
-        .I1(attackCounter_reg__0[4]),
-        .I2(attackCounter_reg__0[3]),
-        .I3(condAttack_i_5__0_n_0),
-        .I4(INC_LENGTH[3]),
-        .I5(condAttack_i_6__0_n_0),
-        .O(condAttack_i_2__0_n_0));
-  LUT3 #(
-    .INIT(8'h69)) 
-    condAttack_i_3__0
-       (.I0(attackCounter_reg__0[5]),
-        .I1(condAttack_i_7__0_n_0),
-        .I2(INC_LENGTH[5]),
-        .O(condAttack_i_3__0_n_0));
-  LUT5 #(
-    .INIT(32'hF66F9FF6)) 
-    condAttack_i_4__0
-       (.I0(attackCounter_reg__0[7]),
-        .I1(INC_LENGTH[7]),
-        .I2(INC_LENGTH[6]),
-        .I3(condAttack_i_8_n_0),
-        .I4(attackCounter_reg__0[6]),
-        .O(condAttack_i_4__0_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    condAttack_i_5__0
-       (.I0(INC_LENGTH[2]),
-        .I1(INC_LENGTH[1]),
-        .I2(INC_LENGTH[0]),
-        .O(condAttack_i_5__0_n_0));
-  LUT6 #(
-    .INIT(64'hFFFF6FF6DBBDFFFF)) 
-    condAttack_i_6__0
-       (.I0(attackCounter_reg__0[1]),
-        .I1(INC_LENGTH[1]),
-        .I2(attackCounter_reg__0[2]),
-        .I3(INC_LENGTH[2]),
-        .I4(INC_LENGTH[0]),
-        .I5(attackCounter_reg__0[0]),
-        .O(condAttack_i_6__0_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    condAttack_i_7__0
-       (.I0(INC_LENGTH[4]),
-        .I1(INC_LENGTH[2]),
-        .I2(INC_LENGTH[1]),
-        .I3(INC_LENGTH[0]),
-        .I4(INC_LENGTH[3]),
-        .O(condAttack_i_7__0_n_0));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    condAttack_i_8
-       (.I0(INC_LENGTH[5]),
-        .I1(INC_LENGTH[3]),
-        .I2(INC_LENGTH[0]),
-        .I3(INC_LENGTH[1]),
-        .I4(INC_LENGTH[2]),
-        .I5(INC_LENGTH[4]),
-        .O(condAttack_i_8_n_0));
-  FDRE condAttack_reg
-       (.C(CLK),
-        .CE(1'b1),
-        .D(condAttack_i_1__0_n_0),
-        .Q(condAttack),
-        .R(1'b0));
-endmodule
-
-(* ORIG_REF_NAME = "ATTACK_SIGNAL_GENERATOR" *) 
-module design_1_ATTACK_MODULE_0_0_ATTACK_SIGNAL_GENERATOR_0
-   (DEBUG,
-    CLK,
-    counter_reg,
-    TO_RECESSIVE,
-    RESET);
-  output DEBUG;
-  input CLK;
-  input [15:0]counter_reg;
-  input TO_RECESSIVE;
-  input RESET;
-
-  wire CLK;
-  wire DEBUG;
-  wire RESET;
-  wire TO_RECESSIVE;
-  wire attack;
-  wire \attackCounter[7]_i_1_n_0 ;
-  wire \attackCounter[7]_i_3_n_0 ;
-  wire [7:0]attackCounter_reg__0;
-  wire condAttack_i_1_n_0;
-  wire condAttack_i_2_n_0;
-  wire condAttack_i_4_n_0;
-  wire condAttack_i_5_n_0;
-  wire condAttack_i_6_n_0;
-  wire condAttack_i_7_n_0;
-  wire [15:0]counter_reg;
-  wire [7:0]p_0_in__0;
-
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT1 #(
-    .INIT(2'h1)) 
-    \attackCounter[0]_i_1__0 
-       (.I0(attackCounter_reg__0[0]),
-        .O(p_0_in__0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    \attackCounter[1]_i_1 
-       (.I0(attackCounter_reg__0[0]),
-        .I1(attackCounter_reg__0[1]),
-        .O(p_0_in__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT3 #(
-    .INIT(8'h6A)) 
-    \attackCounter[2]_i_1 
-       (.I0(attackCounter_reg__0[2]),
-        .I1(attackCounter_reg__0[0]),
-        .I2(attackCounter_reg__0[1]),
-        .O(p_0_in__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT4 #(
-    .INIT(16'h6AAA)) 
-    \attackCounter[3]_i_1 
-       (.I0(attackCounter_reg__0[3]),
-        .I1(attackCounter_reg__0[1]),
-        .I2(attackCounter_reg__0[0]),
-        .I3(attackCounter_reg__0[2]),
-        .O(p_0_in__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT5 #(
-    .INIT(32'h6AAAAAAA)) 
-    \attackCounter[4]_i_1 
-       (.I0(attackCounter_reg__0[4]),
-        .I1(attackCounter_reg__0[2]),
-        .I2(attackCounter_reg__0[0]),
-        .I3(attackCounter_reg__0[1]),
-        .I4(attackCounter_reg__0[3]),
-        .O(p_0_in__0[4]));
-  LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
-    \attackCounter[5]_i_1 
-       (.I0(attackCounter_reg__0[3]),
-        .I1(attackCounter_reg__0[1]),
-        .I2(attackCounter_reg__0[0]),
-        .I3(attackCounter_reg__0[2]),
-        .I4(attackCounter_reg__0[4]),
-        .I5(attackCounter_reg__0[5]),
-        .O(p_0_in__0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    \attackCounter[6]_i_1 
-       (.I0(attackCounter_reg__0[6]),
-        .I1(\attackCounter[7]_i_3_n_0 ),
-        .O(p_0_in__0[6]));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \attackCounter[7]_i_1 
-       (.I0(TO_RECESSIVE),
-        .I1(RESET),
-        .O(\attackCounter[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'h6A)) 
-    \attackCounter[7]_i_2 
-       (.I0(attackCounter_reg__0[7]),
-        .I1(\attackCounter[7]_i_3_n_0 ),
-        .I2(attackCounter_reg__0[6]),
-        .O(p_0_in__0[7]));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    \attackCounter[7]_i_3 
-       (.I0(attackCounter_reg__0[5]),
-        .I1(attackCounter_reg__0[4]),
-        .I2(attackCounter_reg__0[2]),
-        .I3(attackCounter_reg__0[0]),
-        .I4(attackCounter_reg__0[1]),
-        .I5(attackCounter_reg__0[3]),
-        .O(\attackCounter[7]_i_3_n_0 ));
-  FDRE \attackCounter_reg[0] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[0]),
-        .Q(attackCounter_reg__0[0]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  FDRE \attackCounter_reg[1] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[1]),
-        .Q(attackCounter_reg__0[1]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  FDRE \attackCounter_reg[2] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[2]),
-        .Q(attackCounter_reg__0[2]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  FDRE \attackCounter_reg[3] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[3]),
-        .Q(attackCounter_reg__0[3]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  FDRE \attackCounter_reg[4] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[4]),
-        .Q(attackCounter_reg__0[4]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  FDRE \attackCounter_reg[5] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[5]),
-        .Q(attackCounter_reg__0[5]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  FDRE \attackCounter_reg[6] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[6]),
-        .Q(attackCounter_reg__0[6]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  FDRE \attackCounter_reg[7] 
-       (.C(CLK),
-        .CE(1'b1),
-        .D(p_0_in__0[7]),
-        .Q(attackCounter_reg__0[7]),
-        .R(\attackCounter[7]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'hF200)) 
-    condAttack_i_1
-       (.I0(DEBUG),
-        .I1(condAttack_i_2_n_0),
-        .I2(attack),
+    .INIT(16'hE4FF)) 
+    dominant_i_1
+       (.I0(dominant_i_2_n_0),
+        .I1(TO_DOMINANT),
+        .I2(dominant),
         .I3(RESET),
-        .O(condAttack_i_1_n_0));
+        .O(dominant_i_1_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFD7FFFFFFFF)) 
+    dominant_i_10
+       (.I0(counter_reg[7]),
+        .I1(counter_reg[10]),
+        .I2(counter_reg[9]),
+        .I3(counter_reg[2]),
+        .I4(counter_reg[6]),
+        .I5(dominant_i_18_n_0),
+        .O(dominant_i_10_n_0));
   LUT5 #(
-    .INIT(32'h00000010)) 
-    condAttack_i_2
-       (.I0(attackCounter_reg__0[4]),
-        .I1(attackCounter_reg__0[6]),
-        .I2(attackCounter_reg__0[3]),
-        .I3(attackCounter_reg__0[2]),
-        .I4(condAttack_i_4_n_0),
-        .O(condAttack_i_2_n_0));
+    .INIT(32'hF5F7FF7F)) 
+    dominant_i_11
+       (.I0(dominant_i_19_n_0),
+        .I1(counter_reg[6]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[5]),
+        .I4(counter_reg[2]),
+        .O(dominant_i_11_n_0));
   LUT6 #(
-    .INIT(64'h0000000000000002)) 
-    condAttack_i_3
-       (.I0(condAttack_i_5_n_0),
-        .I1(condAttack_i_6_n_0),
-        .I2(condAttack_i_7_n_0),
-        .I3(counter_reg[12]),
-        .I4(counter_reg[13]),
-        .I5(counter_reg[14]),
-        .O(attack));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    condAttack_i_4
-       (.I0(attackCounter_reg__0[1]),
-        .I1(attackCounter_reg__0[0]),
-        .I2(attackCounter_reg__0[7]),
-        .I3(attackCounter_reg__0[5]),
-        .O(condAttack_i_4_n_0));
-  LUT6 #(
-    .INIT(64'h0000000800000000)) 
-    condAttack_i_5
-       (.I0(counter_reg[6]),
-        .I1(counter_reg[3]),
-        .I2(counter_reg[1]),
-        .I3(counter_reg[4]),
-        .I4(counter_reg[0]),
+    .INIT(64'hFFFEBBFFDFBF7EF7)) 
+    dominant_i_12
+       (.I0(counter_reg[3]),
+        .I1(counter_reg[4]),
+        .I2(counter_reg[8]),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[6]),
         .I5(counter_reg[5]),
-        .O(condAttack_i_5_n_0));
-  LUT3 #(
-    .INIT(8'hFB)) 
-    condAttack_i_6
-       (.I0(counter_reg[11]),
-        .I1(counter_reg[9]),
-        .I2(counter_reg[10]),
-        .O(condAttack_i_6_n_0));
+        .O(dominant_i_12_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
-    .INIT(16'hFFEF)) 
-    condAttack_i_7
-       (.I0(counter_reg[8]),
-        .I1(counter_reg[7]),
+    .INIT(16'h8111)) 
+    dominant_i_13
+       (.I0(counter_reg[3]),
+        .I1(counter_reg[4]),
+        .I2(counter_reg[8]),
+        .I3(counter_reg[5]),
+        .O(dominant_i_13_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h4000A004)) 
+    dominant_i_14
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[9]),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[6]),
+        .O(dominant_i_14_n_0));
+  LUT6 #(
+    .INIT(64'hFBFFFFFFFFFFDFFD)) 
+    dominant_i_15
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[9]),
+        .I4(counter_reg[8]),
+        .I5(counter_reg[6]),
+        .O(dominant_i_15_n_0));
+  LUT5 #(
+    .INIT(32'hF5EFFF77)) 
+    dominant_i_16
+       (.I0(counter_reg[3]),
+        .I1(counter_reg[5]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[6]),
+        .I4(counter_reg[4]),
+        .O(dominant_i_16_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT4 #(
+    .INIT(16'hBFDA)) 
+    dominant_i_17
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[9]),
+        .O(dominant_i_17_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'h00208100)) 
+    dominant_i_18
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[5]),
+        .I2(counter_reg[8]),
+        .I3(counter_reg[4]),
+        .I4(counter_reg[3]),
+        .O(dominant_i_18_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT5 #(
+    .INIT(32'h40000000)) 
+    dominant_i_19
+       (.I0(counter_reg[10]),
+        .I1(counter_reg[4]),
+        .I2(counter_reg[3]),
+        .I3(counter_reg[9]),
+        .I4(counter_reg[8]),
+        .O(dominant_i_19_n_0));
+  LUT6 #(
+    .INIT(64'h0000000008805DD5)) 
+    dominant_i_2
+       (.I0(counter_reg[0]),
+        .I1(dominant_reg_i_4_n_0),
+        .I2(counter_reg[9]),
+        .I3(counter_reg[10]),
+        .I4(dominant_reg_i_5_n_0),
+        .I5(dominant_i_6_n_0),
+        .O(dominant_i_2_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF0F100010)) 
+    dominant_i_3
+       (.I0(counter_reg[6]),
+        .I1(counter_reg[4]),
+        .I2(counter_reg[3]),
+        .I3(counter_reg[5]),
+        .I4(counter_reg[2]),
+        .I5(dominant_i_7_n_0),
+        .O(dominant));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    dominant_i_6
+       (.I0(counter_reg[15]),
+        .I1(counter_reg[12]),
+        .I2(counter_reg[11]),
+        .I3(counter_reg[14]),
+        .I4(counter_reg[13]),
+        .O(dominant_i_6_n_0));
+  LUT5 #(
+    .INIT(32'h40501400)) 
+    dominant_i_7
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[4]),
+        .I2(counter_reg[8]),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[3]),
+        .O(dominant_i_7_n_0));
+  LUT6 #(
+    .INIT(64'h09FF090009000900)) 
+    dominant_i_8
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[8]),
+        .I2(dominant_i_12_n_0),
+        .I3(counter_reg[2]),
+        .I4(dominant_i_13_n_0),
+        .I5(dominant_i_14_n_0),
+        .O(dominant_i_8_n_0));
+  LUT5 #(
+    .INIT(32'h1010101F)) 
+    dominant_i_9
+       (.I0(counter_reg[4]),
+        .I1(dominant_i_15_n_0),
         .I2(counter_reg[2]),
-        .I3(counter_reg[15]),
-        .O(condAttack_i_7_n_0));
-  FDRE condAttack_reg
+        .I3(dominant_i_16_n_0),
+        .I4(dominant_i_17_n_0),
+        .O(dominant_i_9_n_0));
+  FDRE dominant_reg
        (.C(CLK),
         .CE(1'b1),
-        .D(condAttack_i_1_n_0),
-        .Q(DEBUG),
+        .D(dominant_i_1_n_0),
+        .Q(TO_DOMINANT),
         .R(1'b0));
+  MUXF7 dominant_reg_i_4
+       (.I0(dominant_i_8_n_0),
+        .I1(dominant_i_9_n_0),
+        .O(dominant_reg_i_4_n_0),
+        .S(counter_reg[1]));
+  MUXF7 dominant_reg_i_5
+       (.I0(dominant_i_10_n_0),
+        .I1(dominant_i_11_n_0),
+        .O(dominant_reg_i_5_n_0),
+        .S(counter_reg[1]));
+  LUT4 #(
+    .INIT(16'hE4FF)) 
+    recessive_i_1
+       (.I0(recessive_i_2_n_0),
+        .I1(TO_RECESSIVE),
+        .I2(recessive),
+        .I3(RESET),
+        .O(recessive_i_1_n_0));
+  LUT5 #(
+    .INIT(32'h81000001)) 
+    recessive_i_10
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[7]),
+        .I2(counter_reg[6]),
+        .I3(counter_reg[5]),
+        .I4(counter_reg[3]),
+        .O(recessive_i_10_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    recessive_i_11
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[8]),
+        .O(recessive_i_11_n_0));
+  LUT4 #(
+    .INIT(16'h0280)) 
+    recessive_i_12
+       (.I0(recessive_i_16_n_0),
+        .I1(counter_reg[5]),
+        .I2(counter_reg[4]),
+        .I3(counter_reg[3]),
+        .O(recessive_i_12_n_0));
+  LUT6 #(
+    .INIT(64'h01000100010001FF)) 
+    recessive_i_13
+       (.I0(counter_reg[6]),
+        .I1(counter_reg[4]),
+        .I2(recessive_i_17_n_0),
+        .I3(counter_reg[3]),
+        .I4(counter_reg[8]),
+        .I5(recessive_i_18_n_0),
+        .O(recessive_i_13_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    recessive_i_14
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[10]),
+        .O(recessive_i_14_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'h00000002)) 
+    recessive_i_16
+       (.I0(counter_reg[10]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[9]),
+        .I4(counter_reg[6]),
+        .O(recessive_i_16_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'hFFDFFFFF)) 
+    recessive_i_17
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[7]),
+        .I2(counter_reg[9]),
+        .I3(counter_reg[10]),
+        .I4(counter_reg[8]),
+        .O(recessive_i_17_n_0));
+  LUT6 #(
+    .INIT(64'hFFBFFBFFFFDFFFFF)) 
+    recessive_i_18
+       (.I0(counter_reg[10]),
+        .I1(counter_reg[5]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[6]),
+        .I4(counter_reg[4]),
+        .I5(counter_reg[9]),
+        .O(recessive_i_18_n_0));
+  LUT6 #(
+    .INIT(64'h0880000000000880)) 
+    recessive_i_19
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[7]),
+        .I2(counter_reg[4]),
+        .I3(counter_reg[6]),
+        .I4(counter_reg[2]),
+        .I5(counter_reg[3]),
+        .O(recessive_i_19_n_0));
+  LUT6 #(
+    .INIT(64'h00000000CA00CAFF)) 
+    recessive_i_2
+       (.I0(recessive_i_4_n_0),
+        .I1(recessive_reg_i_5_n_0),
+        .I2(counter_reg[1]),
+        .I3(counter_reg[0]),
+        .I4(recessive_i_6_n_0),
+        .I5(dominant_i_6_n_0),
+        .O(recessive_i_2_n_0));
+  LUT6 #(
+    .INIT(64'h0004000000041015)) 
+    recessive_i_20
+       (.I0(counter_reg[7]),
+        .I1(counter_reg[4]),
+        .I2(counter_reg[2]),
+        .I3(counter_reg[3]),
+        .I4(counter_reg[5]),
+        .I5(counter_reg[6]),
+        .O(recessive_i_20_n_0));
+  LUT6 #(
+    .INIT(64'h1500BFAA37333733)) 
+    recessive_i_3
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[1]),
+        .I2(counter_reg[5]),
+        .I3(counter_reg[2]),
+        .I4(counter_reg[3]),
+        .I5(counter_reg[6]),
+        .O(recessive));
+  LUT6 #(
+    .INIT(64'hAA80008000800080)) 
+    recessive_i_4
+       (.I0(recessive_i_7_n_0),
+        .I1(recessive_i_8_n_0),
+        .I2(recessive_i_9_n_0),
+        .I3(counter_reg[2]),
+        .I4(recessive_i_10_n_0),
+        .I5(recessive_i_11_n_0),
+        .O(recessive_i_4_n_0));
+  LUT6 #(
+    .INIT(64'h77DF57FFFFFFFFFF)) 
+    recessive_i_6
+       (.I0(recessive_i_14_n_0),
+        .I1(counter_reg[6]),
+        .I2(counter_reg[3]),
+        .I3(counter_reg[8]),
+        .I4(counter_reg[7]),
+        .I5(recessive_reg_i_15_n_0),
+        .O(recessive_i_6_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    recessive_i_7
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[10]),
+        .O(recessive_i_7_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h01888810)) 
+    recessive_i_8
+       (.I0(counter_reg[3]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[6]),
+        .I4(counter_reg[4]),
+        .O(recessive_i_8_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'h0828)) 
+    recessive_i_9
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[9]),
+        .I2(counter_reg[7]),
+        .I3(counter_reg[8]),
+        .O(recessive_i_9_n_0));
+  FDRE recessive_reg
+       (.C(CLK),
+        .CE(1'b1),
+        .D(recessive_i_1_n_0),
+        .Q(TO_RECESSIVE),
+        .R(1'b0));
+  MUXF7 recessive_reg_i_15
+       (.I0(recessive_i_19_n_0),
+        .I1(recessive_i_20_n_0),
+        .O(recessive_reg_i_15_n_0),
+        .S(counter_reg[1]));
+  MUXF7 recessive_reg_i_5
+       (.I0(recessive_i_12_n_0),
+        .I1(recessive_i_13_n_0),
+        .O(recessive_reg_i_5_n_0),
+        .S(counter_reg[2]));
 endmodule
 `ifndef GLBL
 `define GLBL

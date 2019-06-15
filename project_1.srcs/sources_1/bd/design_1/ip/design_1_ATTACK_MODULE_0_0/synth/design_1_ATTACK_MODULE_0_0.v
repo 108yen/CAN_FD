@@ -63,6 +63,7 @@ module design_1_ATTACK_MODULE_0_0 (
   INC_LOC,
   TO_DOMINANT,
   TO_RECESSIVE,
+  INC,
   DEBUG
 );
 
@@ -77,6 +78,7 @@ input wire [7 : 0] INC_LENGTH;
 input wire [7 : 0] INC_LOC;
 inout wire TO_DOMINANT;
 inout wire TO_RECESSIVE;
+output wire [31 : 0] INC;
 output wire DEBUG;
 
   ATTACK_MODULE inst (
@@ -87,6 +89,7 @@ output wire DEBUG;
     .INC_LOC(INC_LOC),
     .TO_DOMINANT(TO_DOMINANT),
     .TO_RECESSIVE(TO_RECESSIVE),
+    .INC(INC),
     .DEBUG(DEBUG)
   );
 endmodule

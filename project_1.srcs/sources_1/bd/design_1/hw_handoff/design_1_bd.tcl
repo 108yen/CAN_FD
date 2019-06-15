@@ -309,7 +309,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_ALL_INPUTS {1} \
    CONFIG.C_ALL_INPUTS_2 {1} \
    CONFIG.C_GPIO2_WIDTH {8} \
-   CONFIG.C_IS_DUAL {1} \
+   CONFIG.C_IS_DUAL {0} \
  ] $axi_gpio_1
 
   # Create instance: axi_uartlite_0, and set properties
@@ -376,6 +376,7 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net ATTACK_MODULE_0_DEBUG [get_bd_ports debug] [get_bd_pins ATTACK_MODULE_0/DEBUG]
+  connect_bd_net -net ATTACK_MODULE_0_INC [get_bd_pins ATTACK_MODULE_0/INC] [get_bd_pins axi_gpio_1/gpio_io_i]
   connect_bd_net -net BTN_0_1 [get_bd_ports BTN_0] [get_bd_pins BTN_CONTROLLER_0/BTN_0]
   connect_bd_net -net BTN_1_1 [get_bd_ports BTN_1] [get_bd_pins BTN_CONTROLLER_0/BTN_1]
   connect_bd_net -net BTN_2_1 [get_bd_ports BTN_2] [get_bd_pins BTN_CONTROLLER_0/BTN_2]
@@ -384,8 +385,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net MODULE_CONTROLLER_0_ATTACK_STATE [get_bd_pins ATTACK_MODULE_0/ATTACK_STATE] [get_bd_pins MODULE_CONTROLLER_0/ATTACK_STATE]
   connect_bd_net -net MODULE_CONTROLLER_0_DEBUG_1 [get_bd_ports debug_1] [get_bd_pins MODULE_CONTROLLER_0/DEBUG_1]
   connect_bd_net -net MODULE_CONTROLLER_0_DEBUG_2 [get_bd_ports debug_2] [get_bd_pins MODULE_CONTROLLER_0/DEBUG_2]
-  connect_bd_net -net MODULE_CONTROLLER_0_OPERATING_STATE [get_bd_pins MODULE_CONTROLLER_0/OPERATING_STATE] [get_bd_pins axi_gpio_1/gpio2_io_i]
-  connect_bd_net -net MODULE_CONTROLLER_0_SUCCESS_RATE [get_bd_pins MODULE_CONTROLLER_0/SUCCESS_RATE] [get_bd_pins axi_gpio_1/gpio_io_i]
   connect_bd_net -net MODULE_CONTROLLER_0_TRIGER [get_bd_ports triger] [get_bd_pins MODULE_CONTROLLER_0/TRIGER]
   connect_bd_net -net Net [get_bd_ports to_dominant] [get_bd_pins ATTACK_MODULE_0/TO_DOMINANT]
   connect_bd_net -net Net1 [get_bd_ports to_recessive] [get_bd_pins ATTACK_MODULE_0/TO_RECESSIVE]

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon May 27 23:39:21 2019
+// Date        : Fri Jun 14 18:43:15 2019
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_BTN_CONTROLLER_0_0/design_1_BTN_CONTROLLER_0_0_sim_netlist.v
+//               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_BTN_CONTROLLER_0_0/design_1_BTN_CONTROLLER_0_0_sim_netlist.v
 // Design      : design_1_BTN_CONTROLLER_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -182,49 +182,65 @@ module design_1_BTN_CONTROLLER_0_0_BTN_CONTROLLER
         .I4(BTN_0_COUNTER[2]),
         .I5(BTN_0_COUNTER[4]),
         .O(\BTN_0_COUNTER[7]_i_4_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[0] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[0] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[0]),
         .Q(BTN_0_COUNTER[0]),
         .R(\BTN_0_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[1] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[1] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[1]),
         .Q(BTN_0_COUNTER[1]),
         .R(\BTN_0_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[2] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[2] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[2]),
         .Q(BTN_0_COUNTER[2]),
         .R(\BTN_0_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[3] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[3] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[3]),
         .Q(BTN_0_COUNTER[3]),
         .R(\BTN_0_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[4] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[4] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[4]),
         .Q(BTN_0_COUNTER[4]),
         .R(\BTN_0_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[5] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[5] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[5]),
         .Q(BTN_0_COUNTER[5]),
         .R(\BTN_0_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[6] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[6] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[6]),
         .Q(BTN_0_COUNTER[6]),
         .R(\BTN_0_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_0_COUNTER_reg[7] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_0_COUNTER_reg[7] 
        (.C(CLK),
         .CE(\BTN_0_COUNTER[7]_i_2_n_0 ),
         .D(p_0_in[7]),
@@ -340,49 +356,65 @@ module design_1_BTN_CONTROLLER_0_0_BTN_CONTROLLER
         .I4(Q[1]),
         .I5(Q[3]),
         .O(\BTN_1_COUNTER[7]_i_4_n_0 ));
-  FDSE \BTN_1_COUNTER_reg[0] 
+  FDSE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[0] 
        (.C(CLK),
         .CE(1'b1),
         .D(\BTN_1_COUNTER[0]_i_2_n_0 ),
         .Q(\BTN_1_COUNTER_reg[0]_0 ),
         .S(\BTN_1_COUNTER[0]_i_1_n_0 ));
-  FDRE \BTN_1_COUNTER_reg[1] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[1] 
        (.C(CLK),
         .CE(\BTN_1_COUNTER[7]_i_2_n_0 ),
         .D(p_2_in[1]),
         .Q(Q[0]),
         .R(\BTN_1_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_1_COUNTER_reg[2] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[2] 
        (.C(CLK),
         .CE(\BTN_1_COUNTER[7]_i_2_n_0 ),
         .D(p_2_in[2]),
         .Q(Q[1]),
         .R(\BTN_1_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_1_COUNTER_reg[3] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[3] 
        (.C(CLK),
         .CE(\BTN_1_COUNTER[7]_i_2_n_0 ),
         .D(p_2_in[3]),
         .Q(Q[2]),
         .R(\BTN_1_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_1_COUNTER_reg[4] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[4] 
        (.C(CLK),
         .CE(\BTN_1_COUNTER[7]_i_2_n_0 ),
         .D(p_2_in[4]),
         .Q(Q[3]),
         .R(\BTN_1_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_1_COUNTER_reg[5] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[5] 
        (.C(CLK),
         .CE(\BTN_1_COUNTER[7]_i_2_n_0 ),
         .D(p_2_in[5]),
         .Q(Q[4]),
         .R(\BTN_1_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_1_COUNTER_reg[6] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[6] 
        (.C(CLK),
         .CE(\BTN_1_COUNTER[7]_i_2_n_0 ),
         .D(p_2_in[6]),
         .Q(Q[5]),
         .R(\BTN_1_COUNTER[7]_i_1_n_0 ));
-  FDRE \BTN_1_COUNTER_reg[7] 
+  FDRE #(
+    .INIT(1'b0)) 
+    \BTN_1_COUNTER_reg[7] 
        (.C(CLK),
         .CE(\BTN_1_COUNTER[7]_i_2_n_0 ),
         .D(p_2_in[7]),
