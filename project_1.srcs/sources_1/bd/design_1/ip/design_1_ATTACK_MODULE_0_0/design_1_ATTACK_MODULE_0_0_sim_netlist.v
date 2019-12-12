@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Jun 15 17:27:24 2019
+// Date        : Thu Dec 12 15:42:03 2019
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_sim_netlist.v
@@ -77,13 +77,13 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
    (TO_DOMINANT,
     TO_RECESSIVE,
     RESET,
-    ATTACK_STATE,
-    CLK);
+    CLK,
+    ATTACK_STATE);
   inout TO_DOMINANT;
   inout TO_RECESSIVE;
   input RESET;
-  input ATTACK_STATE;
   input CLK;
+  input ATTACK_STATE;
 
   wire ATTACK_STATE;
   wire CLK;
@@ -136,33 +136,35 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
   wire dominant_i_18_n_0;
   wire dominant_i_19_n_0;
   wire dominant_i_1_n_0;
+  wire dominant_i_20_n_0;
   wire dominant_i_2_n_0;
+  wire dominant_i_4_n_0;
+  wire dominant_i_5_n_0;
   wire dominant_i_6_n_0;
   wire dominant_i_7_n_0;
   wire dominant_i_8_n_0;
   wire dominant_i_9_n_0;
-  wire dominant_reg_i_4_n_0;
-  wire dominant_reg_i_5_n_0;
   wire recessive;
   wire recessive_i_10_n_0;
   wire recessive_i_11_n_0;
   wire recessive_i_12_n_0;
   wire recessive_i_13_n_0;
   wire recessive_i_14_n_0;
+  wire recessive_i_15_n_0;
   wire recessive_i_16_n_0;
   wire recessive_i_17_n_0;
   wire recessive_i_18_n_0;
   wire recessive_i_19_n_0;
   wire recessive_i_1_n_0;
   wire recessive_i_20_n_0;
+  wire recessive_i_21_n_0;
   wire recessive_i_2_n_0;
   wire recessive_i_4_n_0;
+  wire recessive_i_5_n_0;
   wire recessive_i_6_n_0;
   wire recessive_i_7_n_0;
   wire recessive_i_8_n_0;
   wire recessive_i_9_n_0;
-  wire recessive_reg_i_15_n_0;
-  wire recessive_reg_i_5_n_0;
   wire [3:3]\NLW_counter_reg[12]_i_1_CO_UNCONNECTED ;
 
   LUT2 #(
@@ -308,158 +310,179 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
         .I2(dominant),
         .I3(RESET),
         .O(dominant_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFD7FFFFFFFF)) 
-    dominant_i_10
-       (.I0(counter_reg[7]),
-        .I1(counter_reg[10]),
-        .I2(counter_reg[9]),
-        .I3(counter_reg[2]),
-        .I4(counter_reg[6]),
-        .I5(dominant_i_18_n_0),
-        .O(dominant_i_10_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
-    .INIT(32'hF5F7FF7F)) 
-    dominant_i_11
-       (.I0(dominant_i_19_n_0),
-        .I1(counter_reg[6]),
-        .I2(counter_reg[7]),
+    .INIT(32'hF7FFFEBF)) 
+    dominant_i_10
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[6]),
         .I3(counter_reg[5]),
-        .I4(counter_reg[2]),
+        .I4(counter_reg[3]),
+        .O(dominant_i_10_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    dominant_i_11
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[10]),
         .O(dominant_i_11_n_0));
-  LUT6 #(
-    .INIT(64'hFFFEBBFFDFBF7EF7)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'h1081)) 
     dominant_i_12
-       (.I0(counter_reg[3]),
-        .I1(counter_reg[4]),
-        .I2(counter_reg[8]),
+       (.I0(counter_reg[6]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[9]),
         .I3(counter_reg[7]),
-        .I4(counter_reg[6]),
-        .I5(counter_reg[5]),
         .O(dominant_i_12_n_0));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
-    .INIT(16'h8111)) 
+    .INIT(16'h0120)) 
     dominant_i_13
        (.I0(counter_reg[3]),
         .I1(counter_reg[4]),
-        .I2(counter_reg[8]),
+        .I2(counter_reg[6]),
         .I3(counter_reg[5]),
         .O(dominant_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h4000A004)) 
-    dominant_i_14
-       (.I0(counter_reg[5]),
-        .I1(counter_reg[8]),
-        .I2(counter_reg[9]),
-        .I3(counter_reg[7]),
-        .I4(counter_reg[6]),
-        .O(dominant_i_14_n_0));
-  LUT6 #(
-    .INIT(64'hFBFFFFFFFFFFDFFD)) 
-    dominant_i_15
-       (.I0(counter_reg[5]),
-        .I1(counter_reg[3]),
-        .I2(counter_reg[7]),
-        .I3(counter_reg[9]),
-        .I4(counter_reg[8]),
-        .I5(counter_reg[6]),
-        .O(dominant_i_15_n_0));
-  LUT5 #(
-    .INIT(32'hF5EFFF77)) 
-    dominant_i_16
-       (.I0(counter_reg[3]),
-        .I1(counter_reg[5]),
-        .I2(counter_reg[7]),
-        .I3(counter_reg[6]),
-        .I4(counter_reg[4]),
-        .O(dominant_i_16_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
-    .INIT(16'hBFDA)) 
+    .INIT(16'h1801)) 
+    dominant_i_14
+       (.I0(counter_reg[8]),
+        .I1(counter_reg[9]),
+        .I2(counter_reg[5]),
+        .I3(counter_reg[7]),
+        .O(dominant_i_14_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    dominant_i_15
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[10]),
+        .O(dominant_i_15_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h04840280)) 
+    dominant_i_16
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[6]),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[5]),
+        .O(dominant_i_16_n_0));
+  LUT4 #(
+    .INIT(16'h04E0)) 
     dominant_i_17
        (.I0(counter_reg[5]),
-        .I1(counter_reg[8]),
-        .I2(counter_reg[7]),
-        .I3(counter_reg[9]),
+        .I1(counter_reg[6]),
+        .I2(counter_reg[2]),
+        .I3(counter_reg[7]),
         .O(dominant_i_17_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'h00208100)) 
+  LUT6 #(
+    .INIT(64'h0800000000000000)) 
     dominant_i_18
-       (.I0(counter_reg[9]),
-        .I1(counter_reg[5]),
-        .I2(counter_reg[8]),
-        .I3(counter_reg[4]),
-        .I4(counter_reg[3]),
-        .O(dominant_i_18_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'h40000000)) 
-    dominant_i_19
-       (.I0(counter_reg[10]),
+       (.I0(counter_reg[3]),
         .I1(counter_reg[4]),
-        .I2(counter_reg[3]),
+        .I2(counter_reg[10]),
         .I3(counter_reg[9]),
         .I4(counter_reg[8]),
+        .I5(counter_reg[1]),
+        .O(dominant_i_18_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    dominant_i_19
+       (.I0(counter_reg[7]),
+        .I1(counter_reg[6]),
         .O(dominant_i_19_n_0));
   LUT6 #(
-    .INIT(64'h0000000008805DD5)) 
+    .INIT(64'hAA8A2A0AA0802000)) 
     dominant_i_2
-       (.I0(counter_reg[0]),
-        .I1(dominant_reg_i_4_n_0),
-        .I2(counter_reg[9]),
-        .I3(counter_reg[10]),
-        .I4(dominant_reg_i_5_n_0),
-        .I5(dominant_i_6_n_0),
+       (.I0(dominant_i_4_n_0),
+        .I1(counter_reg[1]),
+        .I2(counter_reg[0]),
+        .I3(dominant_i_5_n_0),
+        .I4(dominant_i_6_n_0),
+        .I5(dominant_i_7_n_0),
         .O(dominant_i_2_n_0));
   LUT6 #(
-    .INIT(64'hFFFFFFFF0F100010)) 
+    .INIT(64'h1000000004000010)) 
+    dominant_i_20
+       (.I0(counter_reg[1]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[4]),
+        .I3(counter_reg[9]),
+        .I4(counter_reg[8]),
+        .I5(counter_reg[5]),
+        .O(dominant_i_20_n_0));
+  LUT6 #(
+    .INIT(64'h332003A0C1C1C1F5)) 
     dominant_i_3
-       (.I0(counter_reg[6]),
-        .I1(counter_reg[4]),
-        .I2(counter_reg[3]),
-        .I3(counter_reg[5]),
-        .I4(counter_reg[2]),
-        .I5(dominant_i_7_n_0),
+       (.I0(counter_reg[1]),
+        .I1(counter_reg[5]),
+        .I2(counter_reg[2]),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[4]),
+        .I5(counter_reg[3]),
         .O(dominant));
   LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    dominant_i_6
-       (.I0(counter_reg[15]),
+    .INIT(32'h00000001)) 
+    dominant_i_4
+       (.I0(counter_reg[11]),
         .I1(counter_reg[12]),
-        .I2(counter_reg[11]),
-        .I3(counter_reg[14]),
-        .I4(counter_reg[13]),
+        .I2(counter_reg[13]),
+        .I3(counter_reg[15]),
+        .I4(counter_reg[14]),
+        .O(dominant_i_4_n_0));
+  LUT6 #(
+    .INIT(64'h888F888888888888)) 
+    dominant_i_5
+       (.I0(dominant_i_8_n_0),
+        .I1(dominant_i_9_n_0),
+        .I2(dominant_i_10_n_0),
+        .I3(counter_reg[2]),
+        .I4(counter_reg[7]),
+        .I5(dominant_i_11_n_0),
+        .O(dominant_i_5_n_0));
+  LUT6 #(
+    .INIT(64'h88F0000088000000)) 
+    dominant_i_6
+       (.I0(dominant_i_12_n_0),
+        .I1(dominant_i_13_n_0),
+        .I2(dominant_i_14_n_0),
+        .I3(counter_reg[2]),
+        .I4(dominant_i_15_n_0),
+        .I5(dominant_i_16_n_0),
         .O(dominant_i_6_n_0));
-  LUT5 #(
-    .INIT(32'h40501400)) 
+  LUT6 #(
+    .INIT(64'h8F88888888888888)) 
     dominant_i_7
-       (.I0(counter_reg[5]),
-        .I1(counter_reg[4]),
-        .I2(counter_reg[8]),
-        .I3(counter_reg[7]),
-        .I4(counter_reg[3]),
+       (.I0(dominant_i_17_n_0),
+        .I1(dominant_i_18_n_0),
+        .I2(counter_reg[2]),
+        .I3(dominant_i_19_n_0),
+        .I4(dominant_i_15_n_0),
+        .I5(dominant_i_20_n_0),
         .O(dominant_i_7_n_0));
   LUT6 #(
-    .INIT(64'h09FF090009000900)) 
+    .INIT(64'h0009080002C01004)) 
     dominant_i_8
+       (.I0(counter_reg[8]),
+        .I1(counter_reg[7]),
+        .I2(counter_reg[5]),
+        .I3(counter_reg[6]),
+        .I4(counter_reg[4]),
+        .I5(counter_reg[3]),
+        .O(dominant_i_8_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT4 #(
+    .INIT(16'h1800)) 
+    dominant_i_9
        (.I0(counter_reg[9]),
         .I1(counter_reg[8]),
-        .I2(dominant_i_12_n_0),
+        .I2(counter_reg[10]),
         .I3(counter_reg[2]),
-        .I4(dominant_i_13_n_0),
-        .I5(dominant_i_14_n_0),
-        .O(dominant_i_8_n_0));
-  LUT5 #(
-    .INIT(32'h1010101F)) 
-    dominant_i_9
-       (.I0(counter_reg[4]),
-        .I1(dominant_i_15_n_0),
-        .I2(counter_reg[2]),
-        .I3(dominant_i_16_n_0),
-        .I4(dominant_i_17_n_0),
         .O(dominant_i_9_n_0));
   FDRE dominant_reg
        (.C(CLK),
@@ -467,16 +490,6 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
         .D(dominant_i_1_n_0),
         .Q(TO_DOMINANT),
         .R(1'b0));
-  MUXF7 dominant_reg_i_4
-       (.I0(dominant_i_8_n_0),
-        .I1(dominant_i_9_n_0),
-        .O(dominant_reg_i_4_n_0),
-        .S(counter_reg[1]));
-  MUXF7 dominant_reg_i_5
-       (.I0(dominant_i_10_n_0),
-        .I1(dominant_i_11_n_0),
-        .O(dominant_reg_i_5_n_0),
-        .S(counter_reg[1]));
   LUT4 #(
     .INIT(16'hE4FF)) 
     recessive_i_1
@@ -485,162 +498,190 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
         .I2(recessive),
         .I3(RESET),
         .O(recessive_i_1_n_0));
-  LUT5 #(
-    .INIT(32'h81000001)) 
-    recessive_i_10
-       (.I0(counter_reg[9]),
-        .I1(counter_reg[7]),
-        .I2(counter_reg[6]),
-        .I3(counter_reg[5]),
-        .I4(counter_reg[3]),
-        .O(recessive_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    recessive_i_11
-       (.I0(counter_reg[4]),
-        .I1(counter_reg[8]),
-        .O(recessive_i_11_n_0));
-  LUT4 #(
-    .INIT(16'h0280)) 
-    recessive_i_12
-       (.I0(recessive_i_16_n_0),
-        .I1(counter_reg[5]),
-        .I2(counter_reg[4]),
-        .I3(counter_reg[3]),
-        .O(recessive_i_12_n_0));
-  LUT6 #(
-    .INIT(64'h01000100010001FF)) 
-    recessive_i_13
-       (.I0(counter_reg[6]),
-        .I1(counter_reg[4]),
-        .I2(recessive_i_17_n_0),
-        .I3(counter_reg[3]),
-        .I4(counter_reg[8]),
-        .I5(recessive_i_18_n_0),
-        .O(recessive_i_13_n_0));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    recessive_i_14
-       (.I0(counter_reg[9]),
-        .I1(counter_reg[10]),
-        .O(recessive_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h00000002)) 
-    recessive_i_16
+    recessive_i_10
        (.I0(counter_reg[10]),
         .I1(counter_reg[8]),
-        .I2(counter_reg[7]),
-        .I3(counter_reg[9]),
-        .I4(counter_reg[6]),
-        .O(recessive_i_16_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT5 #(
-    .INIT(32'hFFDFFFFF)) 
-    recessive_i_17
-       (.I0(counter_reg[5]),
-        .I1(counter_reg[7]),
         .I2(counter_reg[9]),
-        .I3(counter_reg[10]),
-        .I4(counter_reg[8]),
-        .O(recessive_i_17_n_0));
+        .I3(counter_reg[7]),
+        .I4(counter_reg[6]),
+        .O(recessive_i_10_n_0));
   LUT6 #(
-    .INIT(64'hFFBFFBFFFFDFFFFF)) 
-    recessive_i_18
-       (.I0(counter_reg[10]),
-        .I1(counter_reg[5]),
-        .I2(counter_reg[7]),
-        .I3(counter_reg[6]),
-        .I4(counter_reg[4]),
-        .I5(counter_reg[9]),
-        .O(recessive_i_18_n_0));
-  LUT6 #(
-    .INIT(64'h0880000000000880)) 
-    recessive_i_19
+    .INIT(64'h0000000000000080)) 
+    recessive_i_11
        (.I0(counter_reg[5]),
-        .I1(counter_reg[7]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[3]),
+        .I3(counter_reg[4]),
+        .I4(counter_reg[7]),
+        .I5(counter_reg[6]),
+        .O(recessive_i_11_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h40)) 
+    recessive_i_12
+       (.I0(counter_reg[10]),
+        .I1(counter_reg[9]),
+        .I2(counter_reg[2]),
+        .O(recessive_i_12_n_0));
+  LUT6 #(
+    .INIT(64'hFFEFDFFFFFFFF7FF)) 
+    recessive_i_13
+       (.I0(counter_reg[5]),
+        .I1(counter_reg[6]),
         .I2(counter_reg[4]),
-        .I3(counter_reg[6]),
-        .I4(counter_reg[2]),
-        .I5(counter_reg[3]),
-        .O(recessive_i_19_n_0));
-  LUT6 #(
-    .INIT(64'h00000000CA00CAFF)) 
-    recessive_i_2
-       (.I0(recessive_i_4_n_0),
-        .I1(recessive_reg_i_5_n_0),
-        .I2(counter_reg[1]),
-        .I3(counter_reg[0]),
-        .I4(recessive_i_6_n_0),
-        .I5(dominant_i_6_n_0),
-        .O(recessive_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h0004000000041015)) 
-    recessive_i_20
+        .I3(counter_reg[9]),
+        .I4(counter_reg[10]),
+        .I5(counter_reg[7]),
+        .O(recessive_i_13_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'h10)) 
+    recessive_i_14
+       (.I0(counter_reg[8]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[2]),
+        .O(recessive_i_14_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    recessive_i_15
+       (.I0(counter_reg[0]),
+        .I1(counter_reg[1]),
+        .O(recessive_i_15_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'h00400440)) 
+    recessive_i_16
+       (.I0(counter_reg[2]),
+        .I1(counter_reg[5]),
+        .I2(counter_reg[9]),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[8]),
+        .O(recessive_i_16_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h3C000042)) 
+    recessive_i_17
        (.I0(counter_reg[7]),
         .I1(counter_reg[4]),
-        .I2(counter_reg[2]),
-        .I3(counter_reg[3]),
-        .I4(counter_reg[5]),
-        .I5(counter_reg[6]),
-        .O(recessive_i_20_n_0));
-  LUT6 #(
-    .INIT(64'h1500BFAA37333733)) 
-    recessive_i_3
-       (.I0(counter_reg[4]),
-        .I1(counter_reg[1]),
-        .I2(counter_reg[5]),
-        .I3(counter_reg[2]),
-        .I4(counter_reg[3]),
-        .I5(counter_reg[6]),
-        .O(recessive));
-  LUT6 #(
-    .INIT(64'hAA80008000800080)) 
-    recessive_i_4
-       (.I0(recessive_i_7_n_0),
-        .I1(recessive_i_8_n_0),
-        .I2(recessive_i_9_n_0),
-        .I3(counter_reg[2]),
-        .I4(recessive_i_10_n_0),
-        .I5(recessive_i_11_n_0),
-        .O(recessive_i_4_n_0));
-  LUT6 #(
-    .INIT(64'h77DF57FFFFFFFFFF)) 
-    recessive_i_6
-       (.I0(recessive_i_14_n_0),
-        .I1(counter_reg[6]),
-        .I2(counter_reg[3]),
+        .I2(counter_reg[6]),
         .I3(counter_reg[8]),
-        .I4(counter_reg[7]),
-        .I5(recessive_reg_i_15_n_0),
-        .O(recessive_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    recessive_i_7
-       (.I0(counter_reg[9]),
-        .I1(counter_reg[10]),
-        .O(recessive_i_7_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+        .I4(counter_reg[3]),
+        .O(recessive_i_17_n_0));
   LUT5 #(
-    .INIT(32'h01888810)) 
-    recessive_i_8
-       (.I0(counter_reg[3]),
-        .I1(counter_reg[8]),
+    .INIT(32'h40000004)) 
+    recessive_i_18
+       (.I0(counter_reg[8]),
+        .I1(counter_reg[2]),
         .I2(counter_reg[7]),
         .I3(counter_reg[6]),
-        .I4(counter_reg[4]),
-        .O(recessive_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+        .I4(counter_reg[9]),
+        .O(recessive_i_18_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'h0828)) 
+    .INIT(16'hC100)) 
+    recessive_i_19
+       (.I0(counter_reg[6]),
+        .I1(counter_reg[5]),
+        .I2(counter_reg[3]),
+        .I3(counter_reg[4]),
+        .O(recessive_i_19_n_0));
+  LUT6 #(
+    .INIT(64'hAAAAAA80AA80AA80)) 
+    recessive_i_2
+       (.I0(dominant_i_4_n_0),
+        .I1(recessive_i_4_n_0),
+        .I2(recessive_i_5_n_0),
+        .I3(recessive_i_6_n_0),
+        .I4(recessive_i_7_n_0),
+        .I5(recessive_i_8_n_0),
+        .O(recessive_i_2_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT4 #(
+    .INIT(16'hF66F)) 
+    recessive_i_20
+       (.I0(counter_reg[3]),
+        .I1(counter_reg[2]),
+        .I2(counter_reg[6]),
+        .I3(counter_reg[4]),
+        .O(recessive_i_20_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'hFDFDFFAC)) 
+    recessive_i_21
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[2]),
+        .I3(counter_reg[6]),
+        .I4(counter_reg[5]),
+        .O(recessive_i_21_n_0));
+  LUT6 #(
+    .INIT(64'h202F7F7F20207575)) 
+    recessive_i_3
+       (.I0(counter_reg[6]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[4]),
+        .I3(counter_reg[5]),
+        .I4(counter_reg[1]),
+        .I5(counter_reg[2]),
+        .O(recessive));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    recessive_i_4
+       (.I0(counter_reg[0]),
+        .I1(counter_reg[1]),
+        .O(recessive_i_4_n_0));
+  LUT6 #(
+    .INIT(64'hF888FFFFF888F888)) 
+    recessive_i_5
+       (.I0(recessive_i_9_n_0),
+        .I1(recessive_i_10_n_0),
+        .I2(recessive_i_11_n_0),
+        .I3(recessive_i_12_n_0),
+        .I4(recessive_i_13_n_0),
+        .I5(recessive_i_14_n_0),
+        .O(recessive_i_5_n_0));
+  LUT6 #(
+    .INIT(64'h8888800080008000)) 
+    recessive_i_6
+       (.I0(dominant_i_15_n_0),
+        .I1(recessive_i_15_n_0),
+        .I2(recessive_i_16_n_0),
+        .I3(recessive_i_17_n_0),
+        .I4(recessive_i_18_n_0),
+        .I5(recessive_i_19_n_0),
+        .O(recessive_i_6_n_0));
+  LUT5 #(
+    .INIT(32'h00440F00)) 
+    recessive_i_7
+       (.I0(recessive_i_20_n_0),
+        .I1(counter_reg[5]),
+        .I2(recessive_i_21_n_0),
+        .I3(counter_reg[1]),
+        .I4(counter_reg[7]),
+        .O(recessive_i_7_n_0));
+  LUT6 #(
+    .INIT(64'h2002200020202000)) 
+    recessive_i_8
+       (.I0(dominant_i_11_n_0),
+        .I1(counter_reg[0]),
+        .I2(counter_reg[8]),
+        .I3(counter_reg[6]),
+        .I4(counter_reg[3]),
+        .I5(counter_reg[7]),
+        .O(recessive_i_8_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT4 #(
+    .INIT(16'h0024)) 
     recessive_i_9
-       (.I0(counter_reg[5]),
-        .I1(counter_reg[9]),
-        .I2(counter_reg[7]),
-        .I3(counter_reg[8]),
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[5]),
+        .I3(counter_reg[2]),
         .O(recessive_i_9_n_0));
   FDRE recessive_reg
        (.C(CLK),
@@ -648,16 +689,6 @@ module design_1_ATTACK_MODULE_0_0_ATTACK_MODULE
         .D(recessive_i_1_n_0),
         .Q(TO_RECESSIVE),
         .R(1'b0));
-  MUXF7 recessive_reg_i_15
-       (.I0(recessive_i_19_n_0),
-        .I1(recessive_i_20_n_0),
-        .O(recessive_reg_i_15_n_0),
-        .S(counter_reg[1]));
-  MUXF7 recessive_reg_i_5
-       (.I0(recessive_i_12_n_0),
-        .I1(recessive_i_13_n_0),
-        .O(recessive_reg_i_5_n_0),
-        .S(counter_reg[2]));
 endmodule
 `ifndef GLBL
 `define GLBL

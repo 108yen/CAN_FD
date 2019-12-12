@@ -235,12 +235,12 @@ module ATTACK_MODULE(CLK, RESET, ATTACK_STATE, INC_LENGTH, INC_LOC, TO_DOMINANT,
                     dominant <= 1;
                 end
                 //ack
-                16'd1281: begin
+                /*16'd1281: begin
                     dominant <= 0;
                 end
                 16'd1371: begin
                     dominant <= 1;
-                end
+                end*/
             endcase
         end
     end

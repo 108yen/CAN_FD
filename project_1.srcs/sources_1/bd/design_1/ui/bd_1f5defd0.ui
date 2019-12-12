@@ -49,8 +49,8 @@ preplace netloc clk_wiz_1_locked 1 1 4 210 710 NJ 710 1100 680 1420
 preplace netloc axi_uartlite_0_UART 1 5 1 NJ
 preplace netloc MODULE_CONTROLLER_0_ATTACK_STATE 1 4 1 1430
 preplace netloc clk_wiz_1_clk_out2 1 1 4 NJ 700 NJ 700 1080 670 1440
-preplace netloc microblaze_0_dlmb_1 1 3 1 N
 preplace netloc microblaze_0_axi_periph_M02_AXI 1 4 1 1420
+preplace netloc microblaze_0_dlmb_1 1 3 1 N
 preplace netloc Net1 1 5 1 NJ
 preplace netloc Net 1 5 1 NJ
 preplace netloc BTN_CONTROLLER_0_BTN_1_COUNTER 1 4 1 N

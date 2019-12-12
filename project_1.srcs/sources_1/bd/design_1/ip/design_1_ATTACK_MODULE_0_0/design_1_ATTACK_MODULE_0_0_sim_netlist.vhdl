@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Sat Jun 15 17:27:24 2019
+-- Date        : Thu Dec 12 15:42:03 2019
 -- Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/car_security/vivado/CAN_FD/project_1/project_1.srcs/sources_1/bd/design_1/ip/design_1_ATTACK_MODULE_0_0/design_1_ATTACK_MODULE_0_0_sim_netlist.vhdl
@@ -19,8 +19,8 @@ entity design_1_ATTACK_MODULE_0_0_ATTACK_MODULE is
     TO_DOMINANT : inout STD_LOGIC;
     TO_RECESSIVE : inout STD_LOGIC;
     RESET : in STD_LOGIC;
-    ATTACK_STATE : in STD_LOGIC;
-    CLK : in STD_LOGIC
+    CLK : in STD_LOGIC;
+    ATTACK_STATE : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of design_1_ATTACK_MODULE_0_0_ATTACK_MODULE : entity is "ATTACK_MODULE";
@@ -73,47 +73,57 @@ architecture STRUCTURE of design_1_ATTACK_MODULE_0_0_ATTACK_MODULE is
   signal dominant_i_18_n_0 : STD_LOGIC;
   signal dominant_i_19_n_0 : STD_LOGIC;
   signal dominant_i_1_n_0 : STD_LOGIC;
+  signal dominant_i_20_n_0 : STD_LOGIC;
   signal dominant_i_2_n_0 : STD_LOGIC;
+  signal dominant_i_4_n_0 : STD_LOGIC;
+  signal dominant_i_5_n_0 : STD_LOGIC;
   signal dominant_i_6_n_0 : STD_LOGIC;
   signal dominant_i_7_n_0 : STD_LOGIC;
   signal dominant_i_8_n_0 : STD_LOGIC;
   signal dominant_i_9_n_0 : STD_LOGIC;
-  signal dominant_reg_i_4_n_0 : STD_LOGIC;
-  signal dominant_reg_i_5_n_0 : STD_LOGIC;
   signal recessive : STD_LOGIC;
   signal recessive_i_10_n_0 : STD_LOGIC;
   signal recessive_i_11_n_0 : STD_LOGIC;
   signal recessive_i_12_n_0 : STD_LOGIC;
   signal recessive_i_13_n_0 : STD_LOGIC;
   signal recessive_i_14_n_0 : STD_LOGIC;
+  signal recessive_i_15_n_0 : STD_LOGIC;
   signal recessive_i_16_n_0 : STD_LOGIC;
   signal recessive_i_17_n_0 : STD_LOGIC;
   signal recessive_i_18_n_0 : STD_LOGIC;
   signal recessive_i_19_n_0 : STD_LOGIC;
   signal recessive_i_1_n_0 : STD_LOGIC;
   signal recessive_i_20_n_0 : STD_LOGIC;
+  signal recessive_i_21_n_0 : STD_LOGIC;
   signal recessive_i_2_n_0 : STD_LOGIC;
   signal recessive_i_4_n_0 : STD_LOGIC;
+  signal recessive_i_5_n_0 : STD_LOGIC;
   signal recessive_i_6_n_0 : STD_LOGIC;
   signal recessive_i_7_n_0 : STD_LOGIC;
   signal recessive_i_8_n_0 : STD_LOGIC;
   signal recessive_i_9_n_0 : STD_LOGIC;
-  signal recessive_reg_i_15_n_0 : STD_LOGIC;
-  signal recessive_reg_i_5_n_0 : STD_LOGIC;
   signal \NLW_counter_reg[12]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of dominant_i_10 : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of dominant_i_11 : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of dominant_i_12 : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of dominant_i_13 : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of dominant_i_14 : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of dominant_i_17 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of dominant_i_18 : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of dominant_i_19 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of recessive_i_11 : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of recessive_i_14 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of dominant_i_14 : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of dominant_i_15 : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of dominant_i_16 : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of dominant_i_19 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of dominant_i_9 : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of recessive_i_10 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of recessive_i_12 : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of recessive_i_14 : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of recessive_i_15 : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of recessive_i_16 : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of recessive_i_17 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of recessive_i_7 : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of recessive_i_8 : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of recessive_i_9 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of recessive_i_17 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of recessive_i_19 : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of recessive_i_20 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of recessive_i_21 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of recessive_i_4 : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of recessive_i_9 : label is "soft_lutpair7";
 begin
 \counter[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -332,200 +342,226 @@ dominant_i_1: unisim.vcomponents.LUT4
       I3 => RESET,
       O => dominant_i_1_n_0
     );
-dominant_i_10: unisim.vcomponents.LUT6
+dominant_i_10: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFFFD7FFFFFFFF"
+      INIT => X"F7FFFEBF"
     )
         port map (
-      I0 => counter_reg(7),
-      I1 => counter_reg(10),
-      I2 => counter_reg(9),
-      I3 => counter_reg(2),
-      I4 => counter_reg(6),
-      I5 => dominant_i_18_n_0,
+      I0 => counter_reg(4),
+      I1 => counter_reg(8),
+      I2 => counter_reg(6),
+      I3 => counter_reg(5),
+      I4 => counter_reg(3),
       O => dominant_i_10_n_0
     );
-dominant_i_11: unisim.vcomponents.LUT5
+dominant_i_11: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"F5F7FF7F"
+      INIT => X"2"
     )
         port map (
-      I0 => dominant_i_19_n_0,
-      I1 => counter_reg(6),
-      I2 => counter_reg(7),
-      I3 => counter_reg(5),
-      I4 => counter_reg(2),
+      I0 => counter_reg(9),
+      I1 => counter_reg(10),
       O => dominant_i_11_n_0
     );
-dominant_i_12: unisim.vcomponents.LUT6
+dominant_i_12: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFFEBBFFDFBF7EF7"
+      INIT => X"1081"
     )
         port map (
-      I0 => counter_reg(3),
-      I1 => counter_reg(4),
-      I2 => counter_reg(8),
+      I0 => counter_reg(6),
+      I1 => counter_reg(8),
+      I2 => counter_reg(9),
       I3 => counter_reg(7),
-      I4 => counter_reg(6),
-      I5 => counter_reg(5),
       O => dominant_i_12_n_0
     );
 dominant_i_13: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8111"
+      INIT => X"0120"
     )
         port map (
       I0 => counter_reg(3),
       I1 => counter_reg(4),
-      I2 => counter_reg(8),
+      I2 => counter_reg(6),
       I3 => counter_reg(5),
       O => dominant_i_13_n_0
     );
-dominant_i_14: unisim.vcomponents.LUT5
+dominant_i_14: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"4000A004"
+      INIT => X"1801"
     )
         port map (
-      I0 => counter_reg(5),
-      I1 => counter_reg(8),
-      I2 => counter_reg(9),
+      I0 => counter_reg(8),
+      I1 => counter_reg(9),
+      I2 => counter_reg(5),
       I3 => counter_reg(7),
-      I4 => counter_reg(6),
       O => dominant_i_14_n_0
     );
-dominant_i_15: unisim.vcomponents.LUT6
+dominant_i_15: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"FBFFFFFFFFFFDFFD"
+      INIT => X"6"
     )
         port map (
-      I0 => counter_reg(5),
-      I1 => counter_reg(3),
-      I2 => counter_reg(7),
-      I3 => counter_reg(9),
-      I4 => counter_reg(8),
-      I5 => counter_reg(6),
+      I0 => counter_reg(9),
+      I1 => counter_reg(10),
       O => dominant_i_15_n_0
     );
 dominant_i_16: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"F5EFFF77"
+      INIT => X"04840280"
     )
         port map (
-      I0 => counter_reg(3),
-      I1 => counter_reg(5),
-      I2 => counter_reg(7),
-      I3 => counter_reg(6),
-      I4 => counter_reg(4),
+      I0 => counter_reg(4),
+      I1 => counter_reg(3),
+      I2 => counter_reg(6),
+      I3 => counter_reg(7),
+      I4 => counter_reg(5),
       O => dominant_i_16_n_0
     );
 dominant_i_17: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"BFDA"
+      INIT => X"04E0"
     )
         port map (
       I0 => counter_reg(5),
-      I1 => counter_reg(8),
-      I2 => counter_reg(7),
-      I3 => counter_reg(9),
+      I1 => counter_reg(6),
+      I2 => counter_reg(2),
+      I3 => counter_reg(7),
       O => dominant_i_17_n_0
     );
-dominant_i_18: unisim.vcomponents.LUT5
+dominant_i_18: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00208100"
+      INIT => X"0800000000000000"
     )
         port map (
-      I0 => counter_reg(9),
-      I1 => counter_reg(5),
-      I2 => counter_reg(8),
-      I3 => counter_reg(4),
-      I4 => counter_reg(3),
-      O => dominant_i_18_n_0
-    );
-dominant_i_19: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"40000000"
-    )
-        port map (
-      I0 => counter_reg(10),
+      I0 => counter_reg(3),
       I1 => counter_reg(4),
-      I2 => counter_reg(3),
+      I2 => counter_reg(10),
       I3 => counter_reg(9),
       I4 => counter_reg(8),
+      I5 => counter_reg(1),
+      O => dominant_i_18_n_0
+    );
+dominant_i_19: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => counter_reg(7),
+      I1 => counter_reg(6),
       O => dominant_i_19_n_0
     );
 dominant_i_2: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000008805DD5"
+      INIT => X"AA8A2A0AA0802000"
     )
         port map (
-      I0 => counter_reg(0),
-      I1 => dominant_reg_i_4_n_0,
-      I2 => counter_reg(9),
-      I3 => counter_reg(10),
-      I4 => dominant_reg_i_5_n_0,
-      I5 => dominant_i_6_n_0,
+      I0 => dominant_i_4_n_0,
+      I1 => counter_reg(1),
+      I2 => counter_reg(0),
+      I3 => dominant_i_5_n_0,
+      I4 => dominant_i_6_n_0,
+      I5 => dominant_i_7_n_0,
       O => dominant_i_2_n_0
+    );
+dominant_i_20: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"1000000004000010"
+    )
+        port map (
+      I0 => counter_reg(1),
+      I1 => counter_reg(3),
+      I2 => counter_reg(4),
+      I3 => counter_reg(9),
+      I4 => counter_reg(8),
+      I5 => counter_reg(5),
+      O => dominant_i_20_n_0
     );
 dominant_i_3: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFF0F100010"
+      INIT => X"332003A0C1C1C1F5"
     )
         port map (
-      I0 => counter_reg(6),
-      I1 => counter_reg(4),
-      I2 => counter_reg(3),
-      I3 => counter_reg(5),
-      I4 => counter_reg(2),
-      I5 => dominant_i_7_n_0,
+      I0 => counter_reg(1),
+      I1 => counter_reg(5),
+      I2 => counter_reg(2),
+      I3 => counter_reg(7),
+      I4 => counter_reg(4),
+      I5 => counter_reg(3),
       O => dominant
     );
-dominant_i_6: unisim.vcomponents.LUT5
+dominant_i_4: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFFFFFE"
+      INIT => X"00000001"
     )
         port map (
-      I0 => counter_reg(15),
+      I0 => counter_reg(11),
       I1 => counter_reg(12),
-      I2 => counter_reg(11),
-      I3 => counter_reg(14),
-      I4 => counter_reg(13),
+      I2 => counter_reg(13),
+      I3 => counter_reg(15),
+      I4 => counter_reg(14),
+      O => dominant_i_4_n_0
+    );
+dominant_i_5: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"888F888888888888"
+    )
+        port map (
+      I0 => dominant_i_8_n_0,
+      I1 => dominant_i_9_n_0,
+      I2 => dominant_i_10_n_0,
+      I3 => counter_reg(2),
+      I4 => counter_reg(7),
+      I5 => dominant_i_11_n_0,
+      O => dominant_i_5_n_0
+    );
+dominant_i_6: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"88F0000088000000"
+    )
+        port map (
+      I0 => dominant_i_12_n_0,
+      I1 => dominant_i_13_n_0,
+      I2 => dominant_i_14_n_0,
+      I3 => counter_reg(2),
+      I4 => dominant_i_15_n_0,
+      I5 => dominant_i_16_n_0,
       O => dominant_i_6_n_0
     );
-dominant_i_7: unisim.vcomponents.LUT5
+dominant_i_7: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"40501400"
+      INIT => X"8F88888888888888"
     )
         port map (
-      I0 => counter_reg(5),
-      I1 => counter_reg(4),
-      I2 => counter_reg(8),
-      I3 => counter_reg(7),
-      I4 => counter_reg(3),
+      I0 => dominant_i_17_n_0,
+      I1 => dominant_i_18_n_0,
+      I2 => counter_reg(2),
+      I3 => dominant_i_19_n_0,
+      I4 => dominant_i_15_n_0,
+      I5 => dominant_i_20_n_0,
       O => dominant_i_7_n_0
     );
 dominant_i_8: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"09FF090009000900"
+      INIT => X"0009080002C01004"
+    )
+        port map (
+      I0 => counter_reg(8),
+      I1 => counter_reg(7),
+      I2 => counter_reg(5),
+      I3 => counter_reg(6),
+      I4 => counter_reg(4),
+      I5 => counter_reg(3),
+      O => dominant_i_8_n_0
+    );
+dominant_i_9: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"1800"
     )
         port map (
       I0 => counter_reg(9),
       I1 => counter_reg(8),
-      I2 => dominant_i_12_n_0,
+      I2 => counter_reg(10),
       I3 => counter_reg(2),
-      I4 => dominant_i_13_n_0,
-      I5 => dominant_i_14_n_0,
-      O => dominant_i_8_n_0
-    );
-dominant_i_9: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"1010101F"
-    )
-        port map (
-      I0 => counter_reg(4),
-      I1 => dominant_i_15_n_0,
-      I2 => counter_reg(2),
-      I3 => dominant_i_16_n_0,
-      I4 => dominant_i_17_n_0,
       O => dominant_i_9_n_0
     );
 dominant_reg: unisim.vcomponents.FDRE
@@ -535,20 +571,6 @@ dominant_reg: unisim.vcomponents.FDRE
       D => dominant_i_1_n_0,
       Q => TO_DOMINANT,
       R => '0'
-    );
-dominant_reg_i_4: unisim.vcomponents.MUXF7
-     port map (
-      I0 => dominant_i_8_n_0,
-      I1 => dominant_i_9_n_0,
-      O => dominant_reg_i_4_n_0,
-      S => counter_reg(1)
-    );
-dominant_reg_i_5: unisim.vcomponents.MUXF7
-     port map (
-      I0 => dominant_i_10_n_0,
-      I1 => dominant_i_11_n_0,
-      O => dominant_reg_i_5_n_0,
-      S => counter_reg(1)
     );
 recessive_i_1: unisim.vcomponents.LUT4
     generic map(
@@ -563,203 +585,236 @@ recessive_i_1: unisim.vcomponents.LUT4
     );
 recessive_i_10: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"81000001"
-    )
-        port map (
-      I0 => counter_reg(9),
-      I1 => counter_reg(7),
-      I2 => counter_reg(6),
-      I3 => counter_reg(5),
-      I4 => counter_reg(3),
-      O => recessive_i_10_n_0
-    );
-recessive_i_11: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => counter_reg(4),
-      I1 => counter_reg(8),
-      O => recessive_i_11_n_0
-    );
-recessive_i_12: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0280"
-    )
-        port map (
-      I0 => recessive_i_16_n_0,
-      I1 => counter_reg(5),
-      I2 => counter_reg(4),
-      I3 => counter_reg(3),
-      O => recessive_i_12_n_0
-    );
-recessive_i_13: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"01000100010001FF"
-    )
-        port map (
-      I0 => counter_reg(6),
-      I1 => counter_reg(4),
-      I2 => recessive_i_17_n_0,
-      I3 => counter_reg(3),
-      I4 => counter_reg(8),
-      I5 => recessive_i_18_n_0,
-      O => recessive_i_13_n_0
-    );
-recessive_i_14: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => counter_reg(9),
-      I1 => counter_reg(10),
-      O => recessive_i_14_n_0
-    );
-recessive_i_16: unisim.vcomponents.LUT5
-    generic map(
       INIT => X"00000002"
     )
         port map (
       I0 => counter_reg(10),
       I1 => counter_reg(8),
-      I2 => counter_reg(7),
-      I3 => counter_reg(9),
+      I2 => counter_reg(9),
+      I3 => counter_reg(7),
       I4 => counter_reg(6),
+      O => recessive_i_10_n_0
+    );
+recessive_i_11: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000000080"
+    )
+        port map (
+      I0 => counter_reg(5),
+      I1 => counter_reg(8),
+      I2 => counter_reg(3),
+      I3 => counter_reg(4),
+      I4 => counter_reg(7),
+      I5 => counter_reg(6),
+      O => recessive_i_11_n_0
+    );
+recessive_i_12: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"40"
+    )
+        port map (
+      I0 => counter_reg(10),
+      I1 => counter_reg(9),
+      I2 => counter_reg(2),
+      O => recessive_i_12_n_0
+    );
+recessive_i_13: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFEFDFFFFFFFF7FF"
+    )
+        port map (
+      I0 => counter_reg(5),
+      I1 => counter_reg(6),
+      I2 => counter_reg(4),
+      I3 => counter_reg(9),
+      I4 => counter_reg(10),
+      I5 => counter_reg(7),
+      O => recessive_i_13_n_0
+    );
+recessive_i_14: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"10"
+    )
+        port map (
+      I0 => counter_reg(8),
+      I1 => counter_reg(3),
+      I2 => counter_reg(2),
+      O => recessive_i_14_n_0
+    );
+recessive_i_15: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => counter_reg(0),
+      I1 => counter_reg(1),
+      O => recessive_i_15_n_0
+    );
+recessive_i_16: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00400440"
+    )
+        port map (
+      I0 => counter_reg(2),
+      I1 => counter_reg(5),
+      I2 => counter_reg(9),
+      I3 => counter_reg(7),
+      I4 => counter_reg(8),
       O => recessive_i_16_n_0
     );
 recessive_i_17: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFDFFFFF"
-    )
-        port map (
-      I0 => counter_reg(5),
-      I1 => counter_reg(7),
-      I2 => counter_reg(9),
-      I3 => counter_reg(10),
-      I4 => counter_reg(8),
-      O => recessive_i_17_n_0
-    );
-recessive_i_18: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFBFFBFFFFDFFFFF"
-    )
-        port map (
-      I0 => counter_reg(10),
-      I1 => counter_reg(5),
-      I2 => counter_reg(7),
-      I3 => counter_reg(6),
-      I4 => counter_reg(4),
-      I5 => counter_reg(9),
-      O => recessive_i_18_n_0
-    );
-recessive_i_19: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0880000000000880"
-    )
-        port map (
-      I0 => counter_reg(5),
-      I1 => counter_reg(7),
-      I2 => counter_reg(4),
-      I3 => counter_reg(6),
-      I4 => counter_reg(2),
-      I5 => counter_reg(3),
-      O => recessive_i_19_n_0
-    );
-recessive_i_2: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000CA00CAFF"
-    )
-        port map (
-      I0 => recessive_i_4_n_0,
-      I1 => recessive_reg_i_5_n_0,
-      I2 => counter_reg(1),
-      I3 => counter_reg(0),
-      I4 => recessive_i_6_n_0,
-      I5 => dominant_i_6_n_0,
-      O => recessive_i_2_n_0
-    );
-recessive_i_20: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0004000000041015"
+      INIT => X"3C000042"
     )
         port map (
       I0 => counter_reg(7),
       I1 => counter_reg(4),
-      I2 => counter_reg(2),
-      I3 => counter_reg(3),
-      I4 => counter_reg(5),
-      I5 => counter_reg(6),
-      O => recessive_i_20_n_0
-    );
-recessive_i_3: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"1500BFAA37333733"
-    )
-        port map (
-      I0 => counter_reg(4),
-      I1 => counter_reg(1),
-      I2 => counter_reg(5),
-      I3 => counter_reg(2),
-      I4 => counter_reg(3),
-      I5 => counter_reg(6),
-      O => recessive
-    );
-recessive_i_4: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AA80008000800080"
-    )
-        port map (
-      I0 => recessive_i_7_n_0,
-      I1 => recessive_i_8_n_0,
-      I2 => recessive_i_9_n_0,
-      I3 => counter_reg(2),
-      I4 => recessive_i_10_n_0,
-      I5 => recessive_i_11_n_0,
-      O => recessive_i_4_n_0
-    );
-recessive_i_6: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"77DF57FFFFFFFFFF"
-    )
-        port map (
-      I0 => recessive_i_14_n_0,
-      I1 => counter_reg(6),
-      I2 => counter_reg(3),
+      I2 => counter_reg(6),
       I3 => counter_reg(8),
-      I4 => counter_reg(7),
-      I5 => recessive_reg_i_15_n_0,
-      O => recessive_i_6_n_0
+      I4 => counter_reg(3),
+      O => recessive_i_17_n_0
     );
-recessive_i_7: unisim.vcomponents.LUT2
+recessive_i_18: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"6"
+      INIT => X"40000004"
     )
         port map (
-      I0 => counter_reg(9),
-      I1 => counter_reg(10),
-      O => recessive_i_7_n_0
+      I0 => counter_reg(8),
+      I1 => counter_reg(2),
+      I2 => counter_reg(7),
+      I3 => counter_reg(6),
+      I4 => counter_reg(9),
+      O => recessive_i_18_n_0
     );
-recessive_i_8: unisim.vcomponents.LUT5
+recessive_i_19: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"01888810"
+      INIT => X"C100"
+    )
+        port map (
+      I0 => counter_reg(6),
+      I1 => counter_reg(5),
+      I2 => counter_reg(3),
+      I3 => counter_reg(4),
+      O => recessive_i_19_n_0
+    );
+recessive_i_2: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAA80AA80AA80"
+    )
+        port map (
+      I0 => dominant_i_4_n_0,
+      I1 => recessive_i_4_n_0,
+      I2 => recessive_i_5_n_0,
+      I3 => recessive_i_6_n_0,
+      I4 => recessive_i_7_n_0,
+      I5 => recessive_i_8_n_0,
+      O => recessive_i_2_n_0
+    );
+recessive_i_20: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"F66F"
     )
         port map (
       I0 => counter_reg(3),
-      I1 => counter_reg(8),
-      I2 => counter_reg(7),
+      I1 => counter_reg(2),
+      I2 => counter_reg(6),
+      I3 => counter_reg(4),
+      O => recessive_i_20_n_0
+    );
+recessive_i_21: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FDFDFFAC"
+    )
+        port map (
+      I0 => counter_reg(4),
+      I1 => counter_reg(3),
+      I2 => counter_reg(2),
       I3 => counter_reg(6),
-      I4 => counter_reg(4),
+      I4 => counter_reg(5),
+      O => recessive_i_21_n_0
+    );
+recessive_i_3: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"202F7F7F20207575"
+    )
+        port map (
+      I0 => counter_reg(6),
+      I1 => counter_reg(3),
+      I2 => counter_reg(4),
+      I3 => counter_reg(5),
+      I4 => counter_reg(1),
+      I5 => counter_reg(2),
+      O => recessive
+    );
+recessive_i_4: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => counter_reg(0),
+      I1 => counter_reg(1),
+      O => recessive_i_4_n_0
+    );
+recessive_i_5: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"F888FFFFF888F888"
+    )
+        port map (
+      I0 => recessive_i_9_n_0,
+      I1 => recessive_i_10_n_0,
+      I2 => recessive_i_11_n_0,
+      I3 => recessive_i_12_n_0,
+      I4 => recessive_i_13_n_0,
+      I5 => recessive_i_14_n_0,
+      O => recessive_i_5_n_0
+    );
+recessive_i_6: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8888800080008000"
+    )
+        port map (
+      I0 => dominant_i_15_n_0,
+      I1 => recessive_i_15_n_0,
+      I2 => recessive_i_16_n_0,
+      I3 => recessive_i_17_n_0,
+      I4 => recessive_i_18_n_0,
+      I5 => recessive_i_19_n_0,
+      O => recessive_i_6_n_0
+    );
+recessive_i_7: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00440F00"
+    )
+        port map (
+      I0 => recessive_i_20_n_0,
+      I1 => counter_reg(5),
+      I2 => recessive_i_21_n_0,
+      I3 => counter_reg(1),
+      I4 => counter_reg(7),
+      O => recessive_i_7_n_0
+    );
+recessive_i_8: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"2002200020202000"
+    )
+        port map (
+      I0 => dominant_i_11_n_0,
+      I1 => counter_reg(0),
+      I2 => counter_reg(8),
+      I3 => counter_reg(6),
+      I4 => counter_reg(3),
+      I5 => counter_reg(7),
       O => recessive_i_8_n_0
     );
 recessive_i_9: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0828"
+      INIT => X"0024"
     )
         port map (
-      I0 => counter_reg(5),
-      I1 => counter_reg(9),
-      I2 => counter_reg(7),
-      I3 => counter_reg(8),
+      I0 => counter_reg(4),
+      I1 => counter_reg(3),
+      I2 => counter_reg(5),
+      I3 => counter_reg(2),
       O => recessive_i_9_n_0
     );
 recessive_reg: unisim.vcomponents.FDRE
@@ -769,20 +824,6 @@ recessive_reg: unisim.vcomponents.FDRE
       D => recessive_i_1_n_0,
       Q => TO_RECESSIVE,
       R => '0'
-    );
-recessive_reg_i_15: unisim.vcomponents.MUXF7
-     port map (
-      I0 => recessive_i_19_n_0,
-      I1 => recessive_i_20_n_0,
-      O => recessive_reg_i_15_n_0,
-      S => counter_reg(1)
-    );
-recessive_reg_i_5: unisim.vcomponents.MUXF7
-     port map (
-      I0 => recessive_i_12_n_0,
-      I1 => recessive_i_13_n_0,
-      O => recessive_reg_i_5_n_0,
-      S => counter_reg(2)
     );
 end STRUCTURE;
 library IEEE;
